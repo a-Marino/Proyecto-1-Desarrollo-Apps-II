@@ -1,0 +1,53 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Encode Sans", Arial, sans-serif;
+}
+
+.nav {
+	background-color: rgb(55, 187, 237);
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 20px solid rgb(0, 0, 0, 0.7);
+}
+
+.nav .h1-nav {
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.btn-inicio-sesion {
+	background-color: rgb(55, 187, 237);
+}
+
+.inicio-registro {
+	margin-top: 90px;
+	text-align: center
+}
+
+.inicio-registro h1 {
+	font-size: 35px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.inicio-registro h3 {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.botones-registro {
+	display: flex;
+	justify-content: center;
+}
+
+.botones-registro button {
+	margin: 10px;
+	outline: none;
+	border: 0;
+}

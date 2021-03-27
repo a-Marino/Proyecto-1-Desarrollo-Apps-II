@@ -7,3 +7,7 @@ btn_inicio_sesion.addEventListener('click', ()=>{
 	div_inicio_registro.style.display = 'none';
 	div_inicio_sesion.hidden = false;
 });
+
+btn_registro.addEventListener('click', ()=>{
+	console.log('Click en el boton registrarse.');
+});

@@ -1,0 +1,7 @@
+Lista de colores utilizados:
+
+Azul : rgb(55, 187, 237);
+
+Fuente general de la Web: 
+
+font-family: "Encode Sans", Arial, sans-serif;

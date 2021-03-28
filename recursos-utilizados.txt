@@ -2,6 +2,24 @@ Lista de colores utilizados:
 
 Azul : rgb(55, 187, 237);
 
+-------
+
 Fuente general de la Web: 
 
 font-family: "Encode Sans", Arial, sans-serif;
+
+-------
+
+BARRA NAV 
+
+<nav class="nav">
+	<a href=""><img src="imagenes/logo_argentina-blanco.svg" alt="Logo Argentina" class="w-64 ml-24"></a>
+	<h1 class="h1-nav mr-24 mt-1">COVID-19</h1>
+</nav>
+
+----
+
+CDN Tailwind: 
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+----

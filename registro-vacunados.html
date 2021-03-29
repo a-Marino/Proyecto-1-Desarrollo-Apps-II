@@ -7,13 +7,80 @@
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 	<title>Registro de Vacunados</title>
 </head>
-<body>
+<body class="bg-gray-100">
 	<nav class="nav">
 		<a href=""><img src="imagenes/logo_argentina-blanco.svg" alt="Logo Argentina" class="w-64 ml-24"></a>
 		<h1 class="h1-nav mr-24 mt-1">COVID-19</h1>
 	</nav>
 	<div id="form-reg-vacunacion">
-		<!-- Aqui van a ir los inputs para el formulario de vacunacion !-->
+		<form action="" method="" class="px-4 my-10 max-w-3xl mx-24 space-y-5">
+			<!-- Una vez creada la base de datos y conectada con PHP, agregar los values !-->
+			<h1 class="text-4xl font-semibold">Registrar Vacunado</h1>
+			<p class="text-sm text-gray-400">Ingresa los datos del paciente vacunado aqui</p>
+			<div class="flex space-x-4">
+				<div class="w-1/2">
+					<label for="apelnombre">Nombre y Apellido:</label>
+					<input type="text" name="apelnombre" id="nombre_vacunado" class="border border-gray-400 block py-2 px-4 rounded w-full" pattern="[A-Za-z0-9ÑñáéíóúÁÉÍÓÚüÜ´ ]+" required placeholder="Ignacio Ramirez">
+				</div>
+				<div class="w-1/4">
+					<label for="DNI">DNI:</label>
+					<input type="number" name="DNI" id="DNI_vacunado" class="border border-gray-400 block py-2 px-4 rounded w-full" required placeholder="12.345.678">
+				</div>
+			</div>
+			<div class="flex space-x-4">
+				<div class="w-1/2">
+					<label for="domicilio">Domicilio:</label>
+					<input type="text" name="domicilio" id='domicilio_vacunado' class="border border-gray-400 block py-2 px-4 rounded w-full" pattern="[A-Za-z0-9ÑñáéíóúÁÉÍÓÚüÜ´ ]+" required placeholder="Belgrano 123">
+				</div>
+				<div class="w-1/4">
+					<label for="edad">Edad:</label>
+					<input type="number" name="edad" id="edad_vacunado" class="border border-gray-400 block py-2 px-4 rounded w-full" required placeholder="60">
+				</div>
+			</div>
+			<div class="flex space-x-4">
+				<div class="w-1/4">
+					<label for="grupo_riesgo">Grupo de riesgo:</label>
+					<select name="grupo_riesgo" id="grupo_riesgo" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+					</select>
+				</div>
+				<div class="w-1/2">
+					<label for="tipo_vacuna">Tipo de vacuna:</label>
+					<select name="tipo_vacuna" id="tipo_vacuna" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+						<!-- Cambiar estas opciones una vez este la base de datos y todo conectado !-->
+						<option value="vac1">Vacuna 1</option>
+						<option value="vac2">Vacuna 2</option>
+						<option value="vac3">Vacuna 3</option>
+					</select>
+				</div>
+			</div>
+			<div class="flex space-x-4">
+				<div class="w-1/2">
+					<label for="id_vacunatorio1">Vacunatorio primera dosis</label>
+					<select name="id_vacunatorio1" id="id_vacunatorio1" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+						<!-- Cambiar estas opciones una vez este la base de datos y todo conectado !-->
+						<option value="id1">Vacunatorio 1</option>
+						<option value="id2">Vacunatorio 2</option>
+						<option value="id3">Vacunatorio 3</option>
+					</select>
+				</div>
+				<div class="w-1/2">
+					<label for="id_vacunatorio2">Vacunatorio segunda dosis</label>
+					<select name="id_vacunatorio2" id="id_vacunatorio2" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+						<!-- Cambiar estas opciones una vez este la base de datos y todo conectado !-->
+						<option value="id1">Vacunatorio 1</option>
+						<option value="id2">Vacunatorio 2</option>
+						<option value="id3">Vacunatorio 3</option>
+					</select>
+				</div>
+			</div>
+			<button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2" id='btn-registrar-vacunado'>
+		        	Registrar Vacunado
+		    </button>
+		</form>
 	</div>
 </body>
 </html>

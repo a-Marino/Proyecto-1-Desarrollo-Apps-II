@@ -1,5 +1,4 @@
 const btn_inicio_sesion = document.querySelector('#btn-inicio-sesion');
-const btn_registro = document.querySelector('#btn-registro');
 const div_inicio_registro = document.querySelector('#inicio-registro');
 const div_inicio_sesion = document.querySelector('#inicio-sesion');
 
@@ -8,6 +7,3 @@ btn_inicio_sesion.addEventListener('click', ()=>{
 	div_inicio_sesion.hidden = false;
 });
 
-btn_registro.addEventListener('click', ()=>{
-	console.log('Click en el boton registrarse.');
-});

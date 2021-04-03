@@ -22,7 +22,7 @@ body {
 }
 
 .inicio-registro {
-	margin-top: 90px;
+	margin-top: 10px;
 	text-align: center
 }
 
@@ -46,6 +46,12 @@ body {
 	margin: 10px;
 	outline: none;
 	border: 0;
+}
+
+
+.centrado {
+	display: flex;
+	justify-content: center;
 }
 
 /* ESTILO PARA ESCONDER LAS FLECHITAS DEL INPUT NUMBER */

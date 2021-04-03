@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.css">
-	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-	<title>Registro de Vacunados</title>
-</head>
-<body class="bg-gray-100">
-	<nav class="nav">
-		<a href=""><img src="imagenes/logo_argentina-blanco.svg" alt="Logo Argentina" class="w-64 ml-24"></a>
-		<h1 class="h1-nav mr-24 mt-1">COVID-19</h1>
-	</nav>
-	<div id="form-reg-vacunacion">
+<div id="form-reg-vacunacion">
 		<form action="" method="" class="px-4 my-10 max-w-3xl mx-24 space-y-5">
 			<!-- Una vez creada la base de datos y conectada con PHP, agregar los values !-->
 			<div class="flex justify-between">
@@ -83,5 +69,4 @@
 		    </button>
 		</form>
 	</div>
-</body>
-</html>
+

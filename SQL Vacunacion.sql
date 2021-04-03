@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-03-2021 a las 00:57:46
+-- Tiempo de generación: 03-04-2021 a las 02:29:39
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.13
 
@@ -29,10 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `asignaciones` (
   `Id_vacunatorio` int(10) NOT NULL,
-  `RUP` int(20) NOT NULL
+  `DNI` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- -------------------------------------------------------
+--
+-- Volcado de datos para la tabla `asignaciones`
+--
+
+INSERT INTO `asignaciones` (`Id_vacunatorio`, `DNI`) VALUES
+(1, 100),
+(2, 100),
+(1, 102);
+
+-- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `centros`
@@ -42,6 +51,14 @@ CREATE TABLE `centros` (
   `Id` int(10) NOT NULL,
   `nom` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `centros`
+--
+
+INSERT INTO `centros` (`Id`, `nom`) VALUES
+(1, 'Hospital Coronel Suárez'),
+(2, 'Hospital Huanguelen');
 
 -- --------------------------------------------------------
 
@@ -61,13 +78,23 @@ CREATE TABLE `tipos_vacunas` (
 --
 
 CREATE TABLE `usuarios` (
-  `DNI` int(11) NOT NULL,
-  `apelnom` int(11) NOT NULL,
-  `telefono` int(10) NOT NULL,
-  `tipo` int(1) NOT NULL,
-  `RUP` int(10) NOT NULL,
-  `password` varchar(32) NOT NULL
+  `DNI` int(10) NOT NULL,
+  `apelnom` varchar(100) NOT NULL,
+  `telefono` bigint(10) DEFAULT NULL,
+  `role` varchar(3) NOT NULL,
+  `RUP` varchar(10) NOT NULL,
+  `clave` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`DNI`, `apelnom`, `telefono`, `role`, `RUP`, `clave`) VALUES
+(100, 'Juan Enfermero', 2926100100, 'enf', '600100', 'f899139df5e1059396431415e770c6dd'),
+(101, 'Pedro Gestion', 2926101101, 'ges', '', '38b3eff8baf56627478ec76a704e9b52'),
+(102, 'Pedro Enfermero', 2926102102, 'enf', '200300', 'ec8956637a99787bd197eacd77acce5e'),
+(103, 'Juan Admin', 2926103103, 'adm', '', '6974ce5ac660610b44d9b9fed0ff9548');
 
 -- --------------------------------------------------------
 
@@ -83,10 +110,9 @@ CREATE TABLE `vacunados` (
   `grupo_riesgo` int(1) NOT NULL,
   `tipo_vacuna` int(10) NOT NULL,
   `fecha_dosis1` date NOT NULL,
-  `Id_vacunatorio1` int(10) NOT NULL,
+  `Id_vacunatorio` int(10) NOT NULL,
   `RUP1` int(10) NOT NULL,
   `fecha_dosis2` date NOT NULL,
-  `Id_vacunatorio2` int(10) NOT NULL,
   `RUP2` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -103,6 +129,14 @@ CREATE TABLE `vacunatorios` (
   `horario` varchar(50) NOT NULL,
   `telefono` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `vacunatorios`
+--
+
+INSERT INTO `vacunatorios` (`Id`, `Id_centro`, `medico`, `horario`, `telefono`) VALUES
+(1, 1, 'Doctor Chapatin', '8:00Hs a 16:00Hs', '2926100000'),
+(2, 1, 'Doctor House', '7:00Hs a 18:00Hs', '2926100001');
 
 --
 -- Índices para tablas volcadas
@@ -146,7 +180,7 @@ ALTER TABLE `tipos_vacunas`
 -- AUTO_INCREMENT de la tabla `vacunatorios`
 --
 ALTER TABLE `vacunatorios`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

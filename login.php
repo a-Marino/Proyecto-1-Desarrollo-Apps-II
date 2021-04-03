@@ -1,15 +1,11 @@
     <!-- INICIO DE SESION !-->
     <div id="inicio-sesion">
         <p class="mt-20 text-center text-4xl font-bold tracking-wide text-gray-900">
-            Bienvenido a la Secretaría
-        </p>
-        <p class="text-center text-4xl font-bold text-gray-900">
-            de Salud de Coronel Suárez
-        </p>
-        <p class="text-center tracking-wide text-gray-900">
+            Bienvenido a la Secretaría <br> de Salud de Coronel Suárez
+        </p> 
+        <p class="text-center tracking-wide text-gray-500 mt-5">
             Para ver la información sobre la vacunación inicie sesión
         </p>
-
     </div>
     <div class="flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">

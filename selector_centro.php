@@ -1,10 +1,10 @@
 <div class="centrado">
-<div class="flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full space-y-8">
+<div class="flex items-center justify-center py-8 px-10 sm:px-6 lg:px-10 border-2 border-blue-600 rounded-xl shadow-lg">
+    <div class="max-w-md w-full space-y-8 p-10">
 
         <?php echo '<h1 class="text-4xl font-semibold mb-2">Hola ' . $apelnom . '!<h1>'; ?>
 
-        <select name="vacunatorio" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+        <select name="vacunatorio" class="border border-gray-400 block py-2 px-4 rounded w-full shadow-md outline-none hover:border-blue-700" required>
             <option value=''>Seleccione Vacunatorio</option>
             <?php
             while ($registro = $resultado->fetch()) {

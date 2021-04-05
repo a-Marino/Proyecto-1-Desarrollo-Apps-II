@@ -51,7 +51,7 @@
 				$role = $registro['role'];
 				if ($role == 'enf') {
 					// Verifica los Centros Asignados si el role es de enfermeria
-					$consulta = "SELECT * FROM asignaciones INNER JOIN vacunatorios on asignaciones.Id_vacunatorio=vacunatorios.Id where DNI=$dni";
+					$consulta = "SELECT * FROM asignaciones INNER JOIN vacunatorios on asignaciones.Id_vacunatorio=vacunatorios.Id INNER JOIN centros on vacunatorios.Id_centro=centros.Id where DNI=$dni";
 					$resultado = $conexion->query($consulta);
 					$cuenta = $resultado->rowCount();
 					if ($cuenta == 1) {

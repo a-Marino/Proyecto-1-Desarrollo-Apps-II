@@ -9,7 +9,8 @@
             <?php
             while ($registro = $resultado->fetch()) {
                 $Id_vac = $registro['Id_vacunatorio'];
-                echo "<option value=$Id_vac >  Vacunatorio N° $Id_vac  </option>";
+                $nom_centro=$registro['nom'];
+                echo "<option value=$Id_vac >  N° $Id_vac - $nom_centro </option>";
             }
 
             ?>
@@ -17,7 +18,7 @@
 
         <div class="botones-registro mt-5">
             <button type="submit" name="boton" value="sele_centro" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="btn-sele-centro">Seleccionar</button>
-            <button type="submit" name="boton" value="logout" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="btn-salir">Salir</button>
+            <button type="submit" name="boton" value="logout" formnovalidate class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="btn-salir">Salir</button>
         </div>
 
     </div>

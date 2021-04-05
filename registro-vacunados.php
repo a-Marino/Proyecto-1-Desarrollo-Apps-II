@@ -1,17 +1,11 @@
-<div id="form-reg-vacunacion">
-		<form action="" method="" class="px-4 my-10 max-w-3xl mx-24 space-y-5">
+<div id="form-reg-vacunacion" class="px-4 my-10 max-w-3xl mx-24 space-y-5">
+		<form action="" method="">
 			<!-- Una vez creada la base de datos y conectada con PHP, agregar los values !-->
 			<div class="flex justify-between">
 				<div>
 					<h1 class="text-4xl font-semibold mb-2">Registrar Vacunado</h1>
 					<p class="text-sm text-gray-400">Ingresa los datos del paciente vacunado aqui</p>
 				</div>
-				<!-- A este boton lo agregue por si el encargado de registrar al vacunatorio precisa regresar al menu principal !-->
-				<button id="btn_volver_menu">
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class='w-6 text-gray-400 hover:text-gray-500'>
-					  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-					</svg>
-				</button>
 			</div>
 			<div class="flex space-x-4">
 				<div class="w-1/2">
@@ -68,5 +62,5 @@
 		        	Registrar Vacunado
 		    </button>
 		</form>
-	</div>
+</div>
 

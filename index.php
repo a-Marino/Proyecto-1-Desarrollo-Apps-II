@@ -11,7 +11,7 @@
 </head>
 
 <body class="bg-gray-100">
-
+	<!--  Barra NAV !-->
 	<nav class="nav">
 		<a href=""><img src="imagenes/logo_argentina-blanco.svg" alt="Logo Argentina" class="w-64 ml-24"></a>
 		<h1 class="h1-nav mr-24 mt-1">COVID-19</h1>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-04-2021 a las 02:29:39
+-- Tiempo de generación: 06-04-2021 a las 01:11:29
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.13
 
@@ -49,16 +49,20 @@ INSERT INTO `asignaciones` (`Id_vacunatorio`, `DNI`) VALUES
 
 CREATE TABLE `centros` (
   `Id` int(10) NOT NULL,
-  `nom` varchar(50) NOT NULL
+  `nom` varchar(50) NOT NULL,
+  `localidad` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `centros`
 --
 
-INSERT INTO `centros` (`Id`, `nom`) VALUES
-(1, 'Hospital Coronel Suárez'),
-(2, 'Hospital Huanguelen');
+INSERT INTO `centros` (`Id`, `nom`, `localidad`) VALUES
+(20300039, 'Hospital Municipal “Dr. Raúl Caccavo”', 'Coronel\r\nSuárez'),
+(20300055, 'Hospital Municipal “Lucero del Alba”', 'Huanguelén'),
+(20300098, 'Unidad Sanitaria Pueblo San José', 'San José'),
+(23300063, 'Unidad Sanitaria Dr. Lew Frandzman', 'Santa María'),
+(23300080, 'Unidad Sanitaria Pueblo Santa Trinidad', 'Santa Trinidad');
 
 -- --------------------------------------------------------
 
@@ -135,12 +139,18 @@ CREATE TABLE `vacunatorios` (
 --
 
 INSERT INTO `vacunatorios` (`Id`, `Id_centro`, `medico`, `horario`, `telefono`) VALUES
-(1, 1, 'Doctor Chapatin', '8:00Hs a 16:00Hs', '2926100000'),
-(2, 1, 'Doctor House', '7:00Hs a 18:00Hs', '2926100001');
+(1, 20300039, 'Doctor Chapatin', '8:00Hs a 16:00Hs', '2926100000'),
+(2, 20300055, 'Doctor House', '7:00Hs a 18:00Hs', '2926100001');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `centros`
+--
+ALTER TABLE `centros`
+  ADD PRIMARY KEY (`Id`) USING BTREE;
 
 --
 -- Indices de la tabla `tipos_vacunas`

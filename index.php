@@ -17,7 +17,7 @@
 		<h1 class="h1-nav mr-24 mt-1">COVID-19</h1>
 	</nav>
 
-	<form class="mt-8 space-y-6" action="index.php" method="POST">
+	<form action="index.php" method="POST">
 
 		<?php
 		error_reporting(0);

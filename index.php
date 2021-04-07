@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="imagenes/favicon-mobile.png" type="image/png" sizes="16x16">
 	<!-- CDN DE TAILWIND !-->
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 	<title> Secretaria de Salud - Coronel Suarez</title>
@@ -14,7 +15,7 @@
 	<!--  Barra NAV !-->
 	<nav class="nav">
 		<a href=""><img src="imagenes/logo_argentina-blanco.svg" alt="Logo Argentina" class="w-64 ml-24"></a>
-		<h1 class="h1-nav mr-24 mt-1">COVID-19</h1>
+		<img src="imagenes/vacunate-logo-lg-n.png" alt="vacunate" class="h-10 mt-1 mr-24">
 	</nav>
 
 	<form action="index.php" method="POST">
@@ -91,5 +92,4 @@
 		<input type="hidden" name="Id_vacunatorio" value="<?php echo $Id_vacunatorio; ?>">
 
 	</form>
-
 </body>

@@ -8,7 +8,7 @@
 			<div class="flex flex-col">
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="registrar-vacunado"><img src="imagenes/gestor.png" class="w-16 m-auto"><span>Registrar Vacunado</span></button>
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton">Boton 2</button>
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400">Boton 3</button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton">Boton 3</button>
 			</div>
 			<div class="mt-auto">
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="logout" formnovalidate><img src="imagenes/cerrar.png" class="w-16 m-auto"></button>

@@ -7,11 +7,11 @@
         <select name="vacunatorio" class="border border-gray-400 block py-2 px-4 rounded w-full shadow-md outline-none hover:border-blue-700" required>
             <option value=''>Seleccione Vacunatorio</option>
             <?php
-            while ($registro = $resultado->fetch()) {
-                $Id_vac = $registro['Id_vacunatorio'];
-                $nom_centro=$registro['nom'];
-                echo "<option value=$Id_vac >  N° $Id_vac - $nom_centro </option>";
-            }
+                while ($registro = $resultado->fetch()) {
+                    $Id_vac = $registro['Id_vacunatorio'];
+                    $nom_centro=$registro['nom'];
+                    echo "<option value=$Id_vac >  N° $Id_vac - $nom_centro </option>";
+                }
 
             ?>
         </select>

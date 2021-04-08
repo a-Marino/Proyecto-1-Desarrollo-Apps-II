@@ -51,10 +51,17 @@
 				<div class="w-1/2">
 					<label for="id_vacunatorio1">Vacunatorio primera dosis</label>
 					<select name="id_vacunatorio1" id="id_vacunatorio1" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
-						<!-- Cambiar estas opciones una vez este la base de datos y todo conectado !-->
-						<option value="id1">Vacunatorio 1</option>
-						<option value="id2">Vacunatorio 2</option>
-						<option value="id3">Vacunatorio 3</option>
+						<option value="">Seleccionar un Centro de vacunacion</option>
+						<?php 
+							$consulta = "SELECT * FROM centros";
+							$resultado = $conexion->query($consulta);
+							$registro = $resultado->fetchAll();
+							foreach ($registro as $centro) {
+								$nom = $centro['nom'];
+								$id = $centro['id'];
+								echo "<option value=$id >  $nom </option>";
+							}
+						 ?>    
 					</select>
 				</div>
 			</div>

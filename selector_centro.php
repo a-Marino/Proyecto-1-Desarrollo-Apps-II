@@ -12,7 +12,6 @@
                     $nom_centro=$registro['nom'];
                     echo "<option value=$Id_vac >  N° $Id_vac - $nom_centro </option>";
                 }
-
             ?>
         </select>
 

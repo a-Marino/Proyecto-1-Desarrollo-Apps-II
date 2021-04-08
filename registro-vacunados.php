@@ -8,23 +8,23 @@
 				</div>
 			</div>
 			<div class="flex space-x-4">
-				<div class="w-1/2">
-					<label for="apelnombre">Nombre y Apellido:</label>
-					<input type="text" name="apelnombre" id="nombre_vacunado" class="border border-gray-400 block py-2 px-4 rounded w-full" pattern="[A-Za-z0-9ÑñáéíóúÁÉÍÓÚüÜ´ ]+" required placeholder="Ignacio Ramirez">
-				</div>
 				<div class="w-1/4">
 					<label for="DNI">DNI:</label>
 					<input type="number" name="DNI" id="DNI_vacunado" class="border border-gray-400 block py-2 px-4 rounded w-full" required placeholder="12.345.678">
 				</div>
+				<div class="w-1/2">
+					<label for="apelnombre">Nombre y Apellido:</label>
+					<input type="text" name="apelnombre" id="nombre_vacunado" class="border border-gray-400 block py-2 px-4 rounded w-full" pattern="[A-Za-z0-9ÑñáéíóúÁÉÍÓÚüÜ´ ]+" required placeholder="Ignacio Ramirez">
+				</div>
 			</div>
 			<div class="flex space-x-4">
-				<div class="w-1/2">
-					<label for="domicilio">Domicilio:</label>
-					<input type="text" name="domicilio" id='domicilio_vacunado' class="border border-gray-400 block py-2 px-4 rounded w-full" pattern="[A-Za-z0-9ÑñáéíóúÁÉÍÓÚüÜ´ ]+" required placeholder="Belgrano 123">
-				</div>
 				<div class="w-1/4">
 					<label for="edad">Edad:</label>
 					<input type="number" name="edad" id="edad_vacunado" class="border border-gray-400 block py-2 px-4 rounded w-full" required placeholder="60">
+				</div>
+				<div class="w-1/2">
+					<label for="domicilio">Domicilio:</label>
+					<input type="text" name="domicilio" id='domicilio_vacunado' class="border border-gray-400 block py-2 px-4 rounded w-full" pattern="[A-Za-z0-9ÑñáéíóúÁÉÍÓÚüÜ´ ]+" required placeholder="Belgrano 123">
 				</div>
 			</div>
 			<div class="flex space-x-4">
@@ -58,7 +58,7 @@
 					</select>
 				</div>
 			</div>
-			<button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2" id='btn-registrar-vacunado'>
+			<button type="submit" name='boton' value='' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2" id='btn-registrar-vacunado'>
 		        	Registrar Vacunado
 		    </button>
 		</form>

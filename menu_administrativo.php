@@ -6,7 +6,7 @@
 		<!-- NAV !-->
 		<nav class="flex flex-col items-center h-screen">
 			<div class="flex flex-col">
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400">Boton 1</button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="asignaciones">Asignaciones</button>
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400">Boton 2</button>
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400">Boton 3</button>
 			</div>
@@ -20,6 +20,13 @@
 	<div class="flex-1 p-10">
 		<div class="border-2 border-blue-600 rounded-xl shadow-lg p-4 ml-10 mr-10">
 			<h2 class="text-2xl text-center"><?php echo $apelnom ?><h2>
+		</div>
+		<div>
+			<?php 
+				if ($boton == 'asignaciones') {
+					require_once 'asignaciones.php';
+				}
+			?>
 		</div>
 	</div>
 </div>

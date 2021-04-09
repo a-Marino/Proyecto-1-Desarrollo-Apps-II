@@ -8,6 +8,7 @@
 	<link rel="icon" href="imagenes/favicon-mobile.png" type="image/png" sizes="16x16">
 	<!-- CDN DE TAILWIND !-->
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="font/css/font-awesome.min.css">
 	<title> Secretaria de Salud - Coronel Suarez</title>
 </head>
 

@@ -2,20 +2,20 @@
 	<!-- SIDEBAR !-->
 	<div class="bg-gray-200 w-56">
 		<!-- ROL !-->
-		<img src="imagenes/gestor.svg" class="w-20 flex m-auto mt-4">
+		<img src="imagenes/gestor.png" class="w-20 flex m-auto mt-4">
 		<!-- NAV !-->
 		<nav class="flex flex-col items-center h-screen">
 			<div class="flex flex-col">
 					<div class="flex-1 group cursor-help relative">
-								 <img src="imagenes/pregunta.svg" class="w-20 flex m-auto mt-4">
-										<div class="opacity-0 w-28 bg-blue-100 text-grey text-center
-										text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full
-										-right-1/1 ml-14 px-3 pointer-events-none lg:-mt-8">
+						<img src="imagenes/pregunta.png" class="w-20 flex m-auto mt-4">
+							<div class="opacity-0 w-28 bg-blue-100 text-grey text-center
+							text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full
+							-right-1/1 ml-14 px-3 pointer-events-none lg:-mt-8">
 
-										<i>En el perfil de enfermeros/as se puede ver la información vinculada a los ciudadanos en los vacunatorios en los que usted trabaja</i>
-											</svg>
-										</div>
-									</div>
+							En el perfil de enfermeros/as se puede ver la información vinculada a los ciudadanos en los vacunatorios en los que usted trabaja
+									
+							</div>
+					</div>
 
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400">Boton 1</button>
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400">Boton 2</button>

@@ -2,7 +2,7 @@
 	<!-- SIDEBAR !-->
 	<div class="bg-gray-200 w-56">
 		<!-- ROL !-->
-		<img src="imagenes/gestor.png" class="w-20 flex m-auto mt-4">
+		<img src="imagenes/gestor.svg" class="w-20 flex m-auto mt-4">
 		<!-- NAV !-->
 		<nav class="flex flex-col items-center h-screen">
 			<div class="flex flex-col">

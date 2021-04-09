@@ -11,7 +11,7 @@
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400">Boton 3</button>
 			</div>
 			<div class="mt-auto">
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="logout"><img src="imagenes/cerrar.png" class="w-16 m-auto"></button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="logout" formnovalidate=""><img src="imagenes/cerrar.png" class="w-16 m-auto"></button>
 			</div>
 		</nav>
 	</div>
@@ -21,5 +21,8 @@
 		<div class="border-2 border-blue-600 rounded-xl shadow-lg p-4 ml-10 mr-10">
 			<h2 class="text-2xl text-center"><?php echo $apelnom ?><h2>
 		</div>
+		<?php 
+			// SWITCH CON BOTONES
+		?>
 	</div>
 </div>

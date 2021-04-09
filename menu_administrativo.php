@@ -7,11 +7,13 @@
 		<nav class="flex flex-col items-center h-screen">
 			<div class="flex flex-col">
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="asignaciones">Asignaciones</button>
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400">Boton 2</button>
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400">Boton 3</button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-usuario">Agregar Usuarios</button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-vacunas">Agregar Vacunas</button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-vacunatorios">Agregar Vacunatorios</button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-centros">Agregar Centros de vacunacion</button>
 			</div>
 			<div class="mt-auto">
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="logout"><img src="imagenes/cerrar.png" class="w-16 m-auto"></button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="logout" formnovalidate><img src="imagenes/cerrar.png" class="w-16 m-auto"></button>
 			</div>
 		</nav>
 	</div>
@@ -23,8 +25,22 @@
 		</div>
 		<div>
 			<?php 
-				if ($boton == 'asignaciones') {
-					require_once 'asignaciones.php';
+				switch ($boton) {
+					case 'asignaciones':
+						require_once 'asignaciones.php';
+						break;
+					case 'abm-usuario':
+						require_once 'abm-usuario.php';
+						break;
+					case 'abm-vacunas':
+						require_once 'abm-vacunas.php';
+						break;
+					case 'abm-vacunatorios':
+						require_once 'abm-vacunatorios.php';	
+						break;	
+					case 'abm-centros':
+						require_once 'abm-centros.php';
+						break;
 				}
 			?>
 		</div>

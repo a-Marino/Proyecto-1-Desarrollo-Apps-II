@@ -27,12 +27,10 @@
 			<h2 class="text-2xl text-center"><?php echo $apelnom ?><h2>
 		</div>
 		<?php 
-			if ($boton == 'registrar-vacunado') {
-				require_once 'registro-vacunados.php';
-			}
-
-			if ($boton == 'abm-prueba') {
-				require_once 'prueba_abm.php';
+			switch ($boton) {
+				case 'registrar-vacunado':
+					require_once 'registro-vacunados.php';
+					break;
 			}
 		?>
 	</div>

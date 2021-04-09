@@ -59,6 +59,7 @@
 				<?php
 				$consulta = "SELECT * FROM centros INNER JOIN vacunatorios on vacunatorios.Id_centro=centros.Id";
 				$resultado = $conexion->query($consulta);
+				$filas = $resultado->rowCount();
 				$registro = $resultado->fetchAll();
 				foreach ($registro as $dato) {
 					echo '<tr><td class="border px-2 py-4 w-24 md:w-auto">'.'<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">'.$dato['nom'] . '</td></tr>';

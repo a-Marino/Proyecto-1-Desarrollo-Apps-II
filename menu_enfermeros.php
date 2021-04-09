@@ -6,7 +6,7 @@
 		<!-- NAV !-->
 		<nav class="flex flex-col items-center h-screen">
 			<div class="flex flex-col">
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="registrar-vacunado" formnovalidate><img src="imagenes/vacuna.svg" class="w-16 m-auto"><span>Registrar Vacunado</span></button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="registrar-vacunado" formnovalidate><img src="imagenes/vacuna.svg" class="w-12 m-auto"><span>Registrar Vacunado</span></button>
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" formnovalidate>Boton 2</button>
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" formnovalidate>Boton 3</button>
 			</div>

@@ -1,15 +1,7 @@
-<div class="border-2 border-blue-600 rounded-xl shadow-lg p-4 ml-10 mr-10">
-
-
-
-	<div class="grid grid-cols-2">
-		<div class="text-xl text-left">Asignación de Enfermeros</div>
-		<div class="text-xl text-right"><i class="fa fa-user-circle-o" style="font-size:26px;color:blue"></i><?php echo ' ' . $apelnom ?></div>
-	</div>
-
-
+<div class="border-2 border-blue-600 rounded-xl shadow-lg p-4 mx-auto mt-5 w-1/3">
+	<div class="text-xl text-center">Asignación de Enfermeros</div>
 </div>
-<div class="px-4 my-10 max-w-3xl mx-10 space-y-5">
+<div class="px-4 my-10 max-w-3xl mx-auto space-y-5">
 	<div class="flex space-x-4">
 		<div class="w-1/4">
 			<label for="dni">DNI:</label>
@@ -29,13 +21,13 @@
 	</div>
 
 
-	<div class="grid grid-cols-2">
+	<div class="flex">
 		<div>
 			<table class="shadow-lg bg-white">
 				<tr>
-					<th class="bg-blue-100 border text-left px-8 py-4">DNI</th>
-					<th class="bg-blue-100 border text-left px-8 py-4">Nombre y Apellido</th>
-					<th class="bg-blue-100 border text-left px-8 py-4" colspan=2>RUP</th>
+					<th class="bg-blue-100 border text-left px-8 py-1">DNI</th>
+					<th class="bg-blue-100 border text-left px-8 py-1">Nombre y Apellido</th>
+					<th class="bg-blue-100 border text-left px-8 py-1" colspan=2>RUP</th>
 				</tr>
 
 				<?php
@@ -48,10 +40,8 @@
 				?>
 			</table>
 		</div>
-
-
 		<div>
-			<table class="shadow-lg bg-white mx-20">
+			<table class="shadow-lg bg-white">
 				<tr>
 					<th class="bg-blue-100 border text-left px-8 py-4">Vacunatorio</th>
 				</tr>
@@ -62,15 +52,10 @@
 				$filas = $resultado->rowCount();
 				$registro = $resultado->fetchAll();
 				foreach ($registro as $dato) {
-					echo '<tr><td class="border px-2 py-4 w-24 md:w-auto">'.'<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">'.$dato['nom'] . '</td></tr>';
+					echo '<tr><td class="border px-2 py-4 w-28 md:w-auto">'.'<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> '.$dato['nom'] . '</td></tr>';
 				}
 				?>
 			</table>
 		</div>
 	</div>
-
-
-
-
-
 </div>

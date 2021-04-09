@@ -53,13 +53,14 @@
 					<select name="id_vacunatorio1" id="id_vacunatorio1" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
 						<option value="">Seleccionar un Centro de vacunacion</option>
 						<?php 
-							$consulta = "SELECT * FROM centros";
+							$consulta = "SELECT * FROM vacunatorios INNER JOIN centros ON vacunatorios.Id_centro = centros.Id";
 							$resultado = $conexion->query($consulta);
 							$registro = $resultado->fetchAll();
 							foreach ($registro as $centro) {
 								$nom = $centro['nom'];
 								$id = $centro['id'];
-								echo "<option value=$id >  $nom </option>";
+								$medico = $centro['medico'];
+								echo "<option value=$id > $nom - Medico: $medico </option>";
 							}
 						 ?>    
 					</select>

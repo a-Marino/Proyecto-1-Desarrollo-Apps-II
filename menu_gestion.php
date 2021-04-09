@@ -28,7 +28,10 @@
 	<!-- CONTENIDO !-->
 	<div class="flex-1 p-10">
 		<div class="border-2 border-blue-600 rounded-xl shadow-lg p-4 ml-10 mr-10">
-			<h2 class="text-2xl text-center"><?php echo $apelnom ?><h2>
+			<div class="grid grid-cols-2">
+				<div class="text-xl text-left">Menu Gestion</div>
+				<div class="text-xl text-right"><i class="fa fa-user-circle-o" style="font-size:26px;color:blue"></i><?php echo ' ' . $apelnom ?></div>
+			</div>
 		</div>
 		<?php
 			// SWITCH CON BOTONES

@@ -1,7 +1,24 @@
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50
+}
+.tooltip{
+  visibility: hidden;
+  position: absolute;
+}
+.has-tooltip:hover .tooltip {
+  visibility: visible;
+  z-index: 100;
+}
+
 *{
 	margin: 0;
 	padding: 0;
 }
+
 
 body {
 	font-family: "Encode Sans", Arial, sans-serif;
@@ -55,10 +72,16 @@ body {
 	justify-content: center;
 }
 
+.icono-usuario{
+	height: 70px;
+	padding: 5px;
+
+}
+
+
 /* ESTILO PARA ESCONDER LAS FLECHITAS DEL INPUT NUMBER */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-

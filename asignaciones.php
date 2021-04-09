@@ -21,12 +21,14 @@
 			<?php 
 				$consulta = 'SELECT * FROM asignaciones';
 				$resultado = $conexion->query($consulta);
+				$filas = $resultado->rowCount();
 				$registro = $resultado->fetchAll();
 				foreach ($registro as $asignacion) {
 					$id_vacunatorio = $asignacion['Id_vacunatorio'];
 					$dni = $asignacion['DNI'];
 					echo '<li> Vacunatorio: '.$id_vacunatorio.' - DNI Enfermero: '.$dni.'</li>';
 				}
+			
 			?>
 		</ul>
 	</div>

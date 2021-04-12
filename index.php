@@ -5,10 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="js/funciones.js"></script>
 	<link rel="icon" href="imagenes/favicon-mobile.png" type="image/png" sizes="16x16">
 	<!-- CDN DE TAILWIND !-->
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="font/css/font-awesome.min.css">
+
+
 	<title> Secretaria de Salud - Coronel Suarez</title>
 </head>
 
@@ -30,8 +34,11 @@
 		$usuario = $_POST['usuario'];
 		$apelnom = $_POST['apelnom'];
 		$role = $_POST['role'];
-		$Id_vacunatorio = $_POST['Id_vacunatorio'];
+		$RUP = $_POST['RUP'];
 
+		$Id_vacunatorio = $_POST['Id_vacunatorio'];
+	//	echo 'bt='.$boton.' fecha='.date('Y-m-d');
+      
 		if ($boton == 'sele_centro') {
 			$Id_vacunatorio = $_POST['vacunatorio'];
 		}
@@ -51,6 +58,7 @@
 				$registro = $resultado->fetch();
 				$apelnom = $registro['apelnom'];
 				$role = $registro['role'];
+				$RUP = $registro['RUP'];
 				if ($role == 'enf') {
 					// Verifica los Centros Asignados si el role es de enfermeria
 					$consulta = "SELECT * FROM asignaciones INNER JOIN vacunatorios on asignaciones.Id_vacunatorio=vacunatorios.Id INNER JOIN centros on vacunatorios.Id_centro=centros.Id where DNI=$dni";
@@ -85,12 +93,15 @@
 		} else {
 			require 'login.php';
 		}
+        
 		?>
 
 		<input type="hidden" name="usuario" value="<?php echo $usuario; ?>">
 		<input type="hidden" name="apelnom" value="<?php echo $apelnom; ?>">
 		<input type="hidden" name="role" value="<?php echo $role; ?>">
-		<input type="hidden" name="Id_vacunatorio" value="<?php echo $Id_vacunatorio; ?>">
+		<input type="hidden" name="RUP" value="<?php echo $RUP; ?>">
+		<input type="hidden" name="Id_vacunatorio" id="Id_vacunatorio" value="<?php echo $Id_vacunatorio; ?>">
 
 	</form>
+
 </body>

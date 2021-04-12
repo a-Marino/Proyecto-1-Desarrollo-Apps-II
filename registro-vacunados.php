@@ -91,7 +91,6 @@
                     </svg>
                     <p id="men_error"><?php echo $mensaje_error; ?></p>
                 </div>
-                <div id="mm"></div>
 
 				</div>
 			</div>

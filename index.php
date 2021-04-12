@@ -11,8 +11,6 @@
 	<!-- CDN DE TAILWIND !-->
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="font/css/font-awesome.min.css">
-
-
 	<title> Secretaria de Salud - Coronel Suarez</title>
 </head>
 
@@ -28,6 +26,7 @@
 		<?php
 		error_reporting(0);
 		error_reporting(E_ERROR);
+		// Conexion a Base de Datos
 		require 'conexion.php';
 		$mensaje_error = '';
 		$boton = $_POST['boton'];
@@ -37,7 +36,6 @@
 		$RUP = $_POST['RUP'];
 
 		$Id_vacunatorio = $_POST['Id_vacunatorio'];
-	//	echo 'bt='.$boton.' fecha='.date('Y-m-d');
       
 		if ($boton == 'sele_centro') {
 			$Id_vacunatorio = $_POST['vacunatorio'];
@@ -59,6 +57,7 @@
 				$apelnom = $registro['apelnom'];
 				$role = $registro['role'];
 				$RUP = $registro['RUP'];
+				
 				if ($role == 'enf') {
 					// Verifica los Centros Asignados si el role es de enfermeria
 					$consulta = "SELECT * FROM asignaciones INNER JOIN vacunatorios on asignaciones.Id_vacunatorio=vacunatorios.Id INNER JOIN centros on vacunatorios.Id_centro=centros.Id where DNI=$dni";

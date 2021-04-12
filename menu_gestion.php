@@ -11,7 +11,7 @@
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" formnovalidate>Boton 2</button>
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" formnovalidate>Boton 3</button>
 			</div>
-			<div class="mt-auto">
+			<div>
 				<div class="flex-1 group cursor-help relative">
 					<img src="imagenes/pregunta.svg" class="w-16 flex m-auto mt-4">
 						<div class="opacity-0 w-28 bg-blue-100 text-grey text-center

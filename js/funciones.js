@@ -3,6 +3,9 @@ $(document).ready(function () {
   $("#DNI_vacunado").change(function () {
     // Oculta DIV de mensaje
     $("#mensaje_vac").css("visibility", "hidden");
+    // Limpia informacion en patantalla de las dosis aplicadas
+    $("#dosis1").text("Dosis 1:");
+    $("#dosis2").text("Dosis 2:");
     // asigna el valor de DNI a la variable y si es >0 realiza la consulta SQL
     var DNI = $("#DNI_vacunado").val();
     if (DNI > 0) {

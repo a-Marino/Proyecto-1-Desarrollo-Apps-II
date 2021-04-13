@@ -1,16 +1,16 @@
-<div class="border-2 border-blue-600 rounded-xl shadow-lg p-4 ml-10 mr-10">
+<div class="border-2 border-blue-400 rounded-xl shadow-lg p-4 ml-10 mr-10">
 			<div class="grid grid-cols-2">
 				<div class="text-2xl font-semibold text-left">Registrar Vacunados
 				<p class="text-sm text-gray-400">Ingresa los datos del paciente vacunado aqui</p>
 			</div>
 
 
-				<div class="text-xl text-right"><i class="fa fa-user-circle-o" style="font-size:26px;color:blue"></i><?php echo ' ' . $apelnom ?></div>
+				<div class="text-xl text-right"><i class="fa fa-user-circle-o" style="font-size:26px;color:#60A5FA"></i><?php echo ' ' . $apelnom ?></div>
 			</div>
 		</div>
-		
+
 <div id="form-reg-vacunacion" class="px-4 my-4 max-w-3xl mx-24 space-y-5">
-		
+
 			<!-- Una vez creada la base de datos y conectada con PHP, agregar los values !-->
 
 			<div class="flex space-x-4">
@@ -49,7 +49,7 @@
 
 					<select name="tipo_vacuna" id="tipo_vacuna" class="border border-gray-400 block py-2 px-4 rounded w-full" required disabled>
 						<option value="">Seleccionar Tipo de Vacuna</option>
-						<?php 
+						<?php
 							$consulta = "SELECT * FROM tipo_vacunas ORDER BY nom";
 							$resultado = $conexion->query($consulta);
 							$registro = $resultado->fetchAll();
@@ -58,7 +58,7 @@
 								$Id = $dato['Id'];
 								echo "<option value=$Id > $nom </option>";
 							}
-						 ?>    
+						 ?>
 					</select>
 
 
@@ -67,12 +67,12 @@
 				</div>
 			</div>
 
-			<div class="flex space-x-4"> 
-			    <div class="w-1/3 mt-1"> 
-				 <p id="dosis1"> Dosis 1: </p>
+			<div class="flex space-x-4">
+			    <div class="w-1/3 mt-1">
+				 <p id="dosis1" class="font-bold text-white bg-blue-400 rounded p-3"> Dosis 1: </p>
 				</div>
-				<div class="w-1/3 mt-1"> 
-				 <p id="dosis2"> Dosis 2: </p>
+				<div class="w-1/3 mt-1">
+				 <p id="dosis2" class="font-bold text-white bg-blue-400 rounded p-3"> Dosis 2: </p>
 				</div>
 			</div>
 
@@ -99,7 +99,5 @@
 		        	Registrar Vacunado
 		    </button>
 			<input type="hidden" name="turno" id="turno">
-	
+
 </div>
-
-

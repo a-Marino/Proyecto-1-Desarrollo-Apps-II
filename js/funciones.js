@@ -59,6 +59,8 @@ $(document).ready(function () {
             $("#domicilio_vacunado").prop("disabled", false).val("");
             $("#grupo_riesgo").prop("disabled", false).val("");
             $("#tipo_vacuna").prop("disabled", false).val("");
+            $('#dosis1').val("");
+            $('#dosis2').val("");
             $("#btn-registrar-vacunado").css("visibility", "visible");
             // La variable #turno indica 1 si es un nuevo vacunado (Insert)
             $("#turno").val(1);

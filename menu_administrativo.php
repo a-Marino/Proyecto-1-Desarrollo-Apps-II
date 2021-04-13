@@ -4,7 +4,7 @@
 		<!-- ROL !-->
 		<img src="imagenes/admin.svg" class="w-28 flex m-auto mt-4">
 		<!-- NAV !-->
-		<nav class="flex flex-col items-center h-screen">
+		<nav class="flex flex-col items-center min-h-screen">
 			<div class="flex flex-col">
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="asignaciones" formnovalidate><img src="imagenes/centro.svg" class="w-12 m-auto"><span>Asignaciones</span></button>
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-usuario" formnovalidate><img src="imagenes/usuario.svg" class="w-12 m-auto"><span>Agregar Usuarios</span></button>

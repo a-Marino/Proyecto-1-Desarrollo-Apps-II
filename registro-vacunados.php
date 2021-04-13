@@ -69,10 +69,10 @@
 
 			<div class="flex space-x-4"> 
 			    <div class="w-1/3 mt-1"> 
-				 <p id="dosis1"> Dosis 1: </p>
+				 <p id="dosis1" class="font-bold text-white bg-blue-400 rounded p-3"> Dosis 1: </p>
 				</div>
 				<div class="w-1/3 mt-1"> 
-				 <p id="dosis2"> Dosis 2: </p>
+				 <p id="dosis2" class="font-bold text-white bg-blue-400 rounded p-3"> Dosis 2: </p>
 				</div>
 			</div>
 

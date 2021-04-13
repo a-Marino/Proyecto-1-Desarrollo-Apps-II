@@ -4,7 +4,7 @@
 		<!-- ROL !-->
 		<img src="imagenes/gestor.svg" class="w-20 flex m-auto mt-4">
 		<!-- NAV !-->
-		<nav class="flex flex-col items-center h-screen">
+		<nav class="flex flex-col items-center min-h-screen">
 			<div class="flex flex-col">
 
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" formnovalidate>Boton 1</button>

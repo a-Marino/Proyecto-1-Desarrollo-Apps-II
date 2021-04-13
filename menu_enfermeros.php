@@ -4,7 +4,7 @@
 		<!-- ROL !-->
 		<img src="imagenes/enfermeros.svg" alt="enfermero" class="w-28 flex m-auto mt-4">
 		<!-- NAV !-->
-		<nav class="flex flex-col items-center h-screen">
+		<nav class="flex flex-col items-center min-h-screen">
 			<div class="flex flex-col">
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="registrar-vacunado" formnovalidate><img src="imagenes/vacuna.svg" class="w-12 m-auto"><span>Registrar Vacunado</span></button>
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" formnovalidate>Boton 2</button>

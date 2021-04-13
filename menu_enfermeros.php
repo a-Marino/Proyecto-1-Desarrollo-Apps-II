@@ -16,10 +16,10 @@
 					<div class="opacity-0 w-28 bg-blue-100 text-grey text-center
 						text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full
 						-right-1/1 ml-14 px-3 pointer-events-none lg:-mt-8">
-						En el perfil de enfermeros/as se pueden registrar vacunados, y ver informacion sobre los vacunatorios.
+						<i>En el perfil de enfermeros/as se pueden registrar vacunados, y ver informacion sobre los vacunatorios.</i>
 					</div>
 				</div>
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="logout" formnovalidate><img src="imagenes/cerrar.svg" class="w-16 m-auto"></button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="logout" formnovalidate><img src="imagenes/puerta.svg" class="w-16 m-auto"></button>
 			</div>
 		</nav>
 	</div>
@@ -34,23 +34,23 @@
 			$DNI = $_POST['DNI'];
             $edad = $_POST['edad'];
 			$tipo_vacuna = $_POST['tipo_vacuna'];
-			$nom = htmlentities(addslashes($_POST['apelnom_v'])); 
+			$nom = htmlentities(addslashes($_POST['apelnom_v']));
 			$dir = htmlentities(addslashes($_POST['domicilio']));
-			$hoy=date('Y-m-d'); 
-				
+			$hoy=date('Y-m-d');
+
 			if($_POST['turno']==1){
 			    $consulta = "INSERT INTO vacunados (apelnom,domicilio,fecha_dosis1,DNI,edad,grupo_riesgo,tipo_vacuna,Id_vacunatorio,RUP1) VALUES ('$nom','$dir','$hoy',$DNI,$edad,$grupo_riesgo,$tipo_vacuna,$Id_vacunatorio,$RUP)";
 			}else{
 				$consulta = "UPDATE vacunados SET fecha_dosis2='$hoy',RUP2=$RUP WHERE DNI=$DNI";
-			}	
-				
-			$resultado = $conexion->query($consulta);	
+			}
+
+			$resultado = $conexion->query($consulta);
 		    $mgraba=1;
 			$boton='registrar-vacunado';
 
 			case 'registrar-vacunado':
 				require_once 'registro-vacunados.php';
-			
+
 		}
 		?>
 	</div>

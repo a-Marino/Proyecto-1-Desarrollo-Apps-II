@@ -18,10 +18,10 @@
 						<div class="opacity-0 w-28 bg-blue-100 text-grey text-center
 						text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full
 						-right-1/1 ml-14 px-3 pointer-events-none lg:-mt-8">
-							En el perfil de administradores se puede asignar enfermeros a vacunatorios, agregar usuarios, vacunas, vacunatorios y centros de vacunacion.		
+							<i>En el perfil de administradores se puede asignar enfermeros a vacunatorios, agregar usuarios, vacunas, vacunatorios y centros de vacunacion.</i>
 						</div>
 				</div>
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="logout" formnovalidate><img src="imagenes/cerrar.svg" class="w-16 m-auto"></button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="logout" formnovalidate><img src="imagenes/puerta.svg" class="w-16 m-auto"></button>
 			</div>
 		</nav>
 	</div>
@@ -29,7 +29,7 @@
 	<!-- CONTENIDO !-->
 	<div class="flex-1 p-10">
 		<div>
-			<?php 
+			<?php
 				switch ($boton) {
 					case 'asignaciones':
 						require_once 'asignaciones.php';
@@ -41,8 +41,8 @@
 						require_once 'abm-vacunas.php';
 						break;
 					case 'abm-vacunatorios':
-						require_once 'abm-vacunatorios.php';	
-						break;	
+						require_once 'abm-vacunatorios.php';
+						break;
 					case 'abm-centros':
 						require_once 'abm-centros.php';
 						break;

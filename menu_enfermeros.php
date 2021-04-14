@@ -30,27 +30,27 @@
 		<?php
 		switch ($boton) {
 			case 'graba_vacunado':
-			$grupo_riesgo=$_POST['grupo_riesgo'];
-			$DNI = $_POST['DNI'];
-            $edad = $_POST['edad'];
-			$tipo_vacuna = $_POST['tipo_vacuna'];
-			$nom = htmlentities(addslashes($_POST['apelnom_v']));
-			$dir = htmlentities(addslashes($_POST['domicilio']));
-			$hoy=date('Y-m-d');
+				$grupo_riesgo=$_POST['grupo_riesgo'];
+				$DNI = $_POST['DNI'];
+	            $edad = $_POST['edad'];
+				$tipo_vacuna = $_POST['tipo_vacuna'];
+				$nom = htmlentities(addslashes($_POST['apelnom_v']));
+				$dir = htmlentities(addslashes($_POST['domicilio']));
+				$hoy=date('Y-m-d');
 
-			if($_POST['turno']==1){
-			    $consulta = "INSERT INTO vacunados (apelnom,domicilio,fecha_dosis1,DNI,edad,grupo_riesgo,tipo_vacuna,Id_vacunatorio,RUP1) VALUES ('$nom','$dir','$hoy',$DNI,$edad,$grupo_riesgo,$tipo_vacuna,$Id_vacunatorio,$RUP)";
-			}else{
-				$consulta = "UPDATE vacunados SET fecha_dosis2='$hoy',RUP2=$RUP WHERE DNI=$DNI";
-			}
+				if($_POST['turno']==1){
+				    $consulta = "INSERT INTO vacunados (apelnom,domicilio,fecha_dosis1,DNI,edad,grupo_riesgo,tipo_vacuna,Id_vacunatorio,RUP1) VALUES ('$nom','$dir','$hoy',$DNI,$edad,$grupo_riesgo,$tipo_vacuna,$Id_vacunatorio,$RUP)";
+				}else{
+					$consulta = "UPDATE vacunados SET fecha_dosis2='$hoy',RUP2=$RUP WHERE DNI=$DNI";
+				}
 
-			$resultado = $conexion->query($consulta);
-		    $mgraba=1;
-			$boton='registrar-vacunado';
-
+				$resultado = $conexion->query($consulta);
+			    $mgraba=1;
+				$boton='registrar-vacunado';
+			
 			case 'registrar-vacunado':
 				require_once 'registro-vacunados.php';
-
+				break;
 		}
 		?>
 	</div>

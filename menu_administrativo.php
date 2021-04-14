@@ -31,9 +31,6 @@
 		<div>
 			<?php
 				switch ($boton) {
-					case 'asignaciones':
-						require_once 'asignaciones.php';
-						break;
 					case 'graba_usuario':
 						$dni=$_POST['dni'];
 						$nomApell= htmlentities(addslashes($_POST['nomApell']));
@@ -46,7 +43,10 @@
 							
 						$resultado = $conexion->query($sql);
 
-						$boton='abm-usuario';
+						$boton = 'abm-usuario';
+						
+					case 'asignaciones':
+						require_once 'asignaciones.php';
 						break;
 					case 'abm-usuario':
 						require_once 'abm-usuario.php';

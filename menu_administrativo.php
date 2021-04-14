@@ -31,6 +31,20 @@
 		<div>
 			<?php
 				switch ($boton) {
+					case 'graba_usuario':
+						$dni=$_POST['dni'];
+						$nomApell= htmlentities(addslashes($_POST['nomApell']));
+						$telefono=$_POST['telefono'];
+						$role=$_POST['rol'];
+						$rup=$_POST['rup'];
+						$clave=md5($_POST['clave']);
+						
+						$sql= "INSERT INTO usuarios(DNI,apelnom,telefono,role,RUP,clave)VALUES($dni,'$nomApell',$telefono,'$role',$rup,'$clave')";
+							
+						$resultado = $conexion->query($sql);
+
+						$boton = 'abm-usuario';
+						
 					case 'asignaciones':
 						require_once 'asignaciones.php';
 						break;

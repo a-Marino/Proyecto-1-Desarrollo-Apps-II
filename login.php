@@ -40,6 +40,7 @@
                     </span>
                     Inicia Sesión
                 </button>
+                <button class="relative w-full flex justify-center text-xs text-gray-500 mt-5 py-2" name="boton" value="login"> Olvide mi Contraseña  </button>
             </div>
         </div>
     </div>

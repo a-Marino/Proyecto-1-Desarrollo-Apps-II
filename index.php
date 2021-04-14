@@ -27,7 +27,9 @@
 		error_reporting(0);
 		error_reporting(E_ERROR);
 		// Conexion a Base de Datos
+		$errorConexion=0;
 		require 'conexion.php';
+		if($errorConexion==1){require 'errorInicio.php';} else {
 		$mensaje_error = '';
 		$boton = $_POST['boton'];
 		$usuario = $_POST['usuario'];
@@ -93,6 +95,9 @@
 			require 'login.php';
 		}
         
+
+
+	    }
 		?>
 
 		<input type="hidden" name="usuario" value="<?php echo $usuario; ?>">

@@ -1,4 +1,13 @@
 <?php
+
+// Configuracion de Cuenta de Mail
+$mail_host = 'smtp.gmail.com';
+$mail_port = '587';
+$mail_user = 'upsoprograma1@gmail.com';
+$mail_pass = 'Algoritmo01';
+
+
+// Conexion a Base de Datos
 $servidor = "localhost";
 $usuario = "root";
 $password = "";

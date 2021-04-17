@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-04-2021 a las 04:19:26
+-- Tiempo de generación: 18-04-2021 a las 01:15:57
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.13
 
@@ -29,17 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `asignaciones` (
   `Id_vacunatorio` int(10) NOT NULL,
-  `DNI` int(10) NOT NULL
+  `Id_usuario` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `asignaciones`
 --
 
-INSERT INTO `asignaciones` (`Id_vacunatorio`, `DNI`) VALUES
-(1, 100),
-(2, 100),
-(1, 102);
+INSERT INTO `asignaciones` (`Id_vacunatorio`, `Id_usuario`) VALUES
+(1, 1),
+(1, 3),
+(2, 3);
 
 -- --------------------------------------------------------
 
@@ -68,12 +68,41 @@ INSERT INTO `centros` (`Id`, `nom`, `localidad`, `disable`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `dosis`
+--
+
+CREATE TABLE `dosis` (
+  `Id` int(10) NOT NULL,
+  `DNI` int(8) NOT NULL,
+  `tipo_vacuna` int(10) NOT NULL,
+  `fecha` date NOT NULL,
+  `Id_usuario` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `enfermeros`
+--
+
+CREATE TABLE `enfermeros` (
+  `Id_usuario` int(10) NOT NULL,
+  `RUP` int(10) NOT NULL,
+  `telefono` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tipo_vacunas`
 --
 
 CREATE TABLE `tipo_vacunas` (
   `Id` int(11) NOT NULL,
   `nom` varchar(30) NOT NULL,
+  `origen` varchar(30) NOT NULL,
+  `laboratorio` varchar(30) NOT NULL,
+  `dosis` int(5) NOT NULL,
   `disable` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -81,12 +110,14 @@ CREATE TABLE `tipo_vacunas` (
 -- Volcado de datos para la tabla `tipo_vacunas`
 --
 
-INSERT INTO `tipo_vacunas` (`Id`, `nom`, `disable`) VALUES
-(1, 'Moderna mRNA-1273', 0),
-(2, 'Pfizer/BioNTech', 0),
-(3, 'AztraZeneca/U. de Oxford', 0),
-(4, 'Janssen', 0),
-(5, 'Sputnik V', 0);
+INSERT INTO `tipo_vacunas` (`Id`, `nom`, `origen`, `laboratorio`, `dosis`, `disable`) VALUES
+(1, 'Moderna mRNA-1273', '', '', 0, 0),
+(2, 'Pfizer/BioNTech', '', '', 0, 0),
+(3, 'AztraZeneca/U. de Oxford', '', '', 0, 0),
+(4, 'Janssen', '', '', 0, 0),
+(5, 'Sputnik V', '', '', 0, 0),
+(6, 'epepepep', '', '', 0, 0),
+(7, 'xxxxxxxxp', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -95,12 +126,13 @@ INSERT INTO `tipo_vacunas` (`Id`, `nom`, `disable`) VALUES
 --
 
 CREATE TABLE `usuarios` (
+  `Id` int(11) NOT NULL,
   `DNI` int(10) NOT NULL,
   `apelnom` varchar(100) NOT NULL,
-  `telefono` bigint(10) DEFAULT NULL,
+  `mail` varchar(40) NOT NULL,
   `role` varchar(3) NOT NULL,
-  `RUP` int(10) NOT NULL,
   `clave` varchar(32) NOT NULL,
+  `recuperacion` varchar(32) NOT NULL,
   `disable` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -108,11 +140,11 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`DNI`, `apelnom`, `telefono`, `role`, `RUP`, `clave`, `disable`) VALUES
-(100, 'Juan Enfermero', 2926100100, 'enf', 600100, 'f899139df5e1059396431415e770c6dd', 0),
-(101, 'Pedro Gestion', 2926101101, 'ges', 0, '38b3eff8baf56627478ec76a704e9b52', 0),
-(102, 'Pedro Enfermero', 2926102102, 'enf', 200300, 'ec8956637a99787bd197eacd77acce5e', 0),
-(103, 'Juan Admin', 2926103103, 'adm', 0, '6974ce5ac660610b44d9b9fed0ff9548', 0);
+INSERT INTO `usuarios` (`Id`, `DNI`, `apelnom`, `mail`, `role`, `clave`, `recuperacion`, `disable`) VALUES
+(1, 100, 'Juan Enfermero', 'fg.sistemas@hotmail.com', 'enf', 'f899139df5e1059396431415e770c6dd', '019c95d3614356db6813c2151d6f61ef', 0),
+(2, 101, 'Pedro Gestion', '', 'ges', '38b3eff8baf56627478ec76a704e9b52', '', 0),
+(3, 102, 'Pedro Enfermero', 'jfergimenez@gmail.com', 'enf', '698d51a19d8a121ce581499d7b701668', '74e79c7c4aef66b9833a33714fdcf258', 0),
+(4, 103, 'Juan Admin', '', 'adm', '6974ce5ac660610b44d9b9fed0ff9548', '', 0);
 
 -- --------------------------------------------------------
 
@@ -121,27 +153,27 @@ INSERT INTO `usuarios` (`DNI`, `apelnom`, `telefono`, `role`, `RUP`, `clave`, `d
 --
 
 CREATE TABLE `vacunados` (
+  `Id` int(10) NOT NULL,
   `DNI` int(8) NOT NULL,
   `apelnom` varchar(100) NOT NULL,
   `domicilio` varchar(100) NOT NULL,
   `edad` int(3) NOT NULL,
   `grupo_riesgo` int(1) NOT NULL,
   `tipo_vacuna` int(10) NOT NULL,
-  `fecha_dosis1` date NOT NULL,
-  `Id_vacunatorio` int(10) NOT NULL,
-  `RUP1` int(10) NOT NULL,
-  `fecha_dosis2` date NOT NULL,
-  `RUP2` int(11) NOT NULL
+  `Id_vacunatorio` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `vacunados`
 --
 
-INSERT INTO `vacunados` (`DNI`, `apelnom`, `domicilio`, `edad`, `grupo_riesgo`, `tipo_vacuna`, `fecha_dosis1`, `Id_vacunatorio`, `RUP1`, `fecha_dosis2`, `RUP2`) VALUES
-(100, 'Juan 100', 'Alsina 100', 10, 2, 4, '2021-04-12', 1, 200300, '2021-04-12', 200300),
-(500, 'Maria', 'Colon 1200', 33, 4, 4, '2021-04-12', 2, 200300, '0000-00-00', 0),
-(700, 'p7', 'aa1', 7, 2, 3, '2021-04-12', 1, 200300, '2021-04-12', 200300);
+INSERT INTO `vacunados` (`Id`, `DNI`, `apelnom`, `domicilio`, `edad`, `grupo_riesgo`, `tipo_vacuna`, `Id_vacunatorio`) VALUES
+(1, 100, 'Juan 100', 'Alsina 100', 10, 2, 4, 1),
+(2, 500, 'Maria', 'Colon 1200', 33, 4, 4, 2),
+(3, 555, 'Ariel 555', 'Alem 55', 55, 2, 5, 1),
+(4, 700, 'p7', 'aa1', 7, 2, 3, 1),
+(5, 800, 'Andrade', 'Alsina 150', 60, 2, 1, 1),
+(6, 900, 'Mario', 'Belgrano 4900', 80, 4, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -177,6 +209,18 @@ ALTER TABLE `centros`
   ADD PRIMARY KEY (`Id`) USING BTREE;
 
 --
+-- Indices de la tabla `dosis`
+--
+ALTER TABLE `dosis`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `enfermeros`
+--
+ALTER TABLE `enfermeros`
+  ADD PRIMARY KEY (`Id_usuario`);
+
+--
 -- Indices de la tabla `tipo_vacunas`
 --
 ALTER TABLE `tipo_vacunas`
@@ -186,13 +230,14 @@ ALTER TABLE `tipo_vacunas`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`DNI`);
+  ADD PRIMARY KEY (`Id`),
+  ADD UNIQUE KEY `DNI` (`DNI`);
 
 --
 -- Indices de la tabla `vacunados`
 --
 ALTER TABLE `vacunados`
-  ADD PRIMARY KEY (`DNI`);
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `vacunatorios`
@@ -205,10 +250,28 @@ ALTER TABLE `vacunatorios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `dosis`
+--
+ALTER TABLE `dosis`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `tipo_vacunas`
 --
 ALTER TABLE `tipo_vacunas`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `vacunados`
+--
+ALTER TABLE `vacunados`
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `vacunatorios`

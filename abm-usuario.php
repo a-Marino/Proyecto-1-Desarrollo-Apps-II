@@ -60,7 +60,7 @@
 					<th class="bg-blue-100 border text-left w-1/2 px-8 py-2">Nombre y Apellido</th>
 					<th class="bg-blue-100 border text-left w-1/4 px-8 py-2" colspan=3>Estado</th>
 				</tr>
-
+				
 				<?php
 					$consulta = "SELECT * FROM usuarios";
 					$resultado = $conexion->query($consulta);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-04-2021 a las 01:15:57
+-- Tiempo de generación: 19-04-2021 a las 00:13:40
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.13
 
@@ -74,10 +74,20 @@ INSERT INTO `centros` (`Id`, `nom`, `localidad`, `disable`) VALUES
 CREATE TABLE `dosis` (
   `Id` int(10) NOT NULL,
   `DNI` int(8) NOT NULL,
+  `Id_vacunatorio` int(10) NOT NULL,
   `tipo_vacuna` int(10) NOT NULL,
   `fecha` date NOT NULL,
   `Id_usuario` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `dosis`
+--
+
+INSERT INTO `dosis` (`Id`, `DNI`, `Id_vacunatorio`, `tipo_vacuna`, `fecha`, `Id_usuario`) VALUES
+(1, 100, 1, 5, '2021-04-01', 1),
+(2, 100, 1, 5, '2021-04-15', 2),
+(3, 500, 2, 3, '2021-04-02', 2);
 
 -- --------------------------------------------------------
 
@@ -100,8 +110,6 @@ CREATE TABLE `enfermeros` (
 CREATE TABLE `tipo_vacunas` (
   `Id` int(11) NOT NULL,
   `nom` varchar(30) NOT NULL,
-  `origen` varchar(30) NOT NULL,
-  `laboratorio` varchar(30) NOT NULL,
   `dosis` int(5) NOT NULL,
   `disable` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -110,14 +118,12 @@ CREATE TABLE `tipo_vacunas` (
 -- Volcado de datos para la tabla `tipo_vacunas`
 --
 
-INSERT INTO `tipo_vacunas` (`Id`, `nom`, `origen`, `laboratorio`, `dosis`, `disable`) VALUES
-(1, 'Moderna mRNA-1273', '', '', 0, 0),
-(2, 'Pfizer/BioNTech', '', '', 0, 0),
-(3, 'AztraZeneca/U. de Oxford', '', '', 0, 0),
-(4, 'Janssen', '', '', 0, 0),
-(5, 'Sputnik V', '', '', 0, 0),
-(6, 'epepepep', '', '', 0, 0),
-(7, 'xxxxxxxxp', '', '', 0, 0);
+INSERT INTO `tipo_vacunas` (`Id`, `nom`, `dosis`, `disable`) VALUES
+(1, 'Moderna mRNA-1273', 2, 0),
+(2, 'Pfizer/BioNTech', 3, 0),
+(3, 'AztraZeneca/U. de Oxford', 1, 0),
+(4, 'Janssen', 1, 0),
+(5, 'Sputnik V', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -158,22 +164,20 @@ CREATE TABLE `vacunados` (
   `apelnom` varchar(100) NOT NULL,
   `domicilio` varchar(100) NOT NULL,
   `edad` int(3) NOT NULL,
-  `grupo_riesgo` int(1) NOT NULL,
-  `tipo_vacuna` int(10) NOT NULL,
-  `Id_vacunatorio` int(10) NOT NULL
+  `grupo_riesgo` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `vacunados`
 --
 
-INSERT INTO `vacunados` (`Id`, `DNI`, `apelnom`, `domicilio`, `edad`, `grupo_riesgo`, `tipo_vacuna`, `Id_vacunatorio`) VALUES
-(1, 100, 'Juan 100', 'Alsina 100', 10, 2, 4, 1),
-(2, 500, 'Maria', 'Colon 1200', 33, 4, 4, 2),
-(3, 555, 'Ariel 555', 'Alem 55', 55, 2, 5, 1),
-(4, 700, 'p7', 'aa1', 7, 2, 3, 1),
-(5, 800, 'Andrade', 'Alsina 150', 60, 2, 1, 1),
-(6, 900, 'Mario', 'Belgrano 4900', 80, 4, 5, 2);
+INSERT INTO `vacunados` (`Id`, `DNI`, `apelnom`, `domicilio`, `edad`, `grupo_riesgo`) VALUES
+(1, 100, 'Juan 100', 'Alsina 100', 10, 2),
+(2, 200, 'Maria', 'Colon 1200', 33, 4),
+(3, 555, 'Ariel 555', 'Alem 55', 55, 2),
+(4, 700, 'p7', 'aa1', 7, 2),
+(5, 800, 'Andrade', 'Alsina 150', 60, 2),
+(6, 900, 'Mario', 'Belgrano 4900', 80, 4);
 
 -- --------------------------------------------------------
 
@@ -253,7 +257,7 @@ ALTER TABLE `vacunatorios`
 -- AUTO_INCREMENT de la tabla `dosis`
 --
 ALTER TABLE `dosis`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_vacunas`

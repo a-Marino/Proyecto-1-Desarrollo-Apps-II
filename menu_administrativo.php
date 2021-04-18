@@ -45,11 +45,11 @@
 
 						$boton = 'abm-usuario';
 						
-					case 'asignaciones':
-						require_once 'asignaciones.php';
-						break;
 					case 'abm-usuario':
 						require_once 'abm-usuario.php';
+						break;
+					case 'asignaciones':
+						require_once 'asignaciones.php';
 						break;
 					case 'abm-vacunas':
 						require_once 'abm-vacunas.php';

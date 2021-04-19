@@ -22,12 +22,14 @@
 			<label for="clave">Centro</label>
 			<select name="centro"  class="border border-gray-400 block py-2 px-4 rounded w-full" required >
 				<?php
-					$consulta = "SELECT nom, centros.id FROM `vacunatorios` INNER JOIN centros ON vacunatorios.Id_centro = centros.Id;";
+					$consulta = "SELECT * FROM centros";
 					$resultado = $conexion->query($consulta);
 					$centros = $resultado->fetchAll();
 
 					foreach($centros as $centro){
-						echo "<option value=$centro[id] >". $centro['nom']."</option>";
+						$IdCentros = $centro['Id'];
+						$nomCentro =$centro['nom'];
+						echo "<option value=$IdCentros> $nomCentro </option>";
 					}
 				?>
 			</select>

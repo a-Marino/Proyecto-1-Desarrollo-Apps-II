@@ -53,6 +53,8 @@
 						$resultado = $conexion->query($sql);
 					
 						require_once 'abm-vacunas.php';
+
+						break;
 					
 					case 'graba_vacunatorio':
 						$centro= $_POST['centro'];
@@ -62,6 +64,8 @@
 
 						$sql ="INSERT INTO vacunatorios(id_centro,medico,horario,telefono)VALUE($centro,'$medico','$horario',$telefono)";
 						$resultado = $conexion->query($sql);
+
+
 
 					case 'abm-usuario':
 						require_once 'abm-usuario.php';

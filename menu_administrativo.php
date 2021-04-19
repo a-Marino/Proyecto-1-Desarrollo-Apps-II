@@ -7,10 +7,10 @@
 		<nav class="flex flex-col items-center min-h-screen">
 			<div class="flex flex-col">
 				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="asignaciones" formnovalidate><img src="imagenes/centro.svg" class="w-12 m-auto"><span>Asignaciones</span></button>
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-usuario" formnovalidate><img src="imagenes/usuario.svg" class="w-12 m-auto"><span>Agregar Usuarios</span></button>
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-vacunas" formnovalidate><img src="imagenes/vacuna.svg" class="w-12 m-auto"><span>Agregar Vacunas</span></button>
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-vacunatorios" formnovalidate><img src="imagenes/vacunatorio.svg" class="w-12 m-auto"><span>Agregar Vacunatorios</span></button>
-				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-centros" formnovalidate><img src="imagenes/centro.svg" class="w-12 m-auto"><span>Agregar Centros de vacunacion</span></button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-usuario" formnovalidate><img src="imagenes/usuario.svg" class="w-12 m-auto"><span>ABM Usuarios</span></button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-vacunas" formnovalidate><img src="imagenes/vacuna.svg" class="w-12 m-auto"><span>ABM Vacunas</span></button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-vacunatorios" formnovalidate><img src="imagenes/vacunatorio.svg" class="w-12 m-auto"><span>ABM Vacunatorios</span></button>
+				<button class="py-2 5 px-4 m-auto mt-4 hover:bg-gray-400" name="boton" value="abm-centros" formnovalidate><img src="imagenes/centro.svg" class="w-12 m-auto"><span>ABM Centros de vacunacion</span></button>
 			</div>
 			<div class="mt-auto">
 				<div class="flex-1 group cursor-help relative">

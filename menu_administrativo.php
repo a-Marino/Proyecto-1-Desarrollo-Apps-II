@@ -44,7 +44,18 @@
 						$resultado = $conexion->query($sql);
 
 						$boton = 'abm-usuario';
-						
+					
+					case 'graba_vacuna':
+						$nombre = $_POST['nom_vacuna'];
+						$dosis = $_POST['cant_dosis'];
+
+						$sql ="INSERT INTO tipo_vacunas(nom,dosis)VALUE('$nombre',$dosis)";
+						$resultado = $conexion->query($sql);
+					
+						require_once 'abm-vacunas.php';
+
+					
+
 					case 'abm-usuario':
 						require_once 'abm-usuario.php';
 						break;

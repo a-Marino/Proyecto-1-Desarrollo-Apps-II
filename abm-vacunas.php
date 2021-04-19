@@ -9,18 +9,18 @@
 				<input type="text" name="nom_vacuna"  class="border border-gray-400 block py-2 px-4 rounded w-full" required>
 			</div>
 			<div class="w-1/2">
-				<label for="nom_vacuna">Cantidad de Dosis</label>
-				<input type="number" name="nom_vacuna"  class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+				<label for="cant_dosis">Cantidad de Dosis</label>
+				<input type="number" name="cant_dosis"  class="border border-gray-400 block py-2 px-4 rounded w-full" required>
 			</div>
 			</div>
 			<div class="flex space-x-5 justify-center mt-5">
 			<div class="w-1/4">
-				<button name='boton' value='buscar_usuario' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2">
+				<button name='boton' value='buscar_vacuna' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2">
 			        	Buscar
 			    </button>
 			</div>
 			<div class="w-1/4">
-				<button name='boton' value='graba_usuario' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2" id='btn-registrar-vacunado'>
+				<button name='boton' value='graba_vacuna' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2" id='btn-registrar-vacunado'>
 			        	Grabar
 			    </button>
 			</div>

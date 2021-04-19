@@ -15,13 +15,13 @@
 				<label for="apellNom">Apellido y Nombre</label>
 				<input type="text" name="nomApell"  class="border border-gray-400 block py-2 px-4 rounded w-full" required>
 			</div>
-			<div class="w-1/4">
-				<label for="telefono">Teléfono</label>
-				<input type="number" name="telefono"  class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+			<div class="w-1/2">
+				<label for="email">Email</label>
+				<input type="email" name="email"  class="border border-gray-400 block py-2 px-4 rounded w-full" required>
 			</div>
 		</div>
 		<div class="flex space-x-4 mt-2">
-			<div class="w-1/2">
+			<div class="w-1/2" id="div_roles">
 				<label for="rol">Role</label>
 					<select name="rol" id="rol" class="border border-gray-400 block py-2 px-4 rounded w-full" required >
 						<option value="enfermero">Enfermero</option>
@@ -32,6 +32,10 @@
 			<div class="w-1/4" id="div_rup">
 				<label for="rup">Rup</label>
 				<input type="number" name="rup" id="rup" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+			</div>
+			<div class="w-1/2" id="div_tele">
+				<label for="telefono">Telefono</label>
+				<input type="number" name="telefono" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
 			</div>
 			<div class="w-1/4" id="div_clave">
 				<label for="clave">Clave</label>
@@ -66,7 +70,7 @@
 					$resultado = $conexion->query($consulta);
 					$registro = $resultado->fetchAll();
 					foreach ($registro as $dato) {
-						echo '<tr><td class="border px-8 py-3">' . $dato['DNI'] . '</td><td class="border px-8 py-3">' . $dato['apelnom'] . '</td><td class="border px-8 py-3">' . ($dato['disable'] == 0 ? 'Habilitado' : 'Deshabilitado') . '</td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate> Bloquear </button></td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate> Editar </button></td></tr>';
+						echo '<tr><td class="border px-8 py-3">' . $dato['DNI'] . '</td><td class="border px-8 py-3">' . $dato['apelnom'] . '</td><td class="border px-8 py-3">' . ($dato['disable'] == 0 ? 'Habilitado' : 'Deshabilitado') . '</td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate>'. ($dato['disable'] == 0 ? 'Deshabilitar' : 'Habilitar') .'</button></td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate> Editar </button></td></tr>';
 					}
 				?>
 			</table>

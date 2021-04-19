@@ -41,17 +41,25 @@
 						require_once 'abm-vacunas.php';
 
 						break;
+						
 					case 'graba_usuario':
 						$dni=$_POST['dni'];
 						$nomApell= htmlentities(addslashes($_POST['nomApell']));
 						$telefono=$_POST['telefono'];
+						$email=$_POST['email'];
 						$role=$_POST['rol'];
 						$rup=$_POST['rup'];
 						$clave=md5($_POST['clave']);
 						
-						$sql= "INSERT INTO usuarios(DNI,apelnom,telefono,role,RUP,clave)VALUES($dni,'$nomApell',$telefono,'$role',$rup,'$clave')";
-							
-						$resultado = $conexion->query($sql);
+
+						if ($role == 'enf') {
+							$sql1 = "INSERT INTO usuarios(DNI,apelnom,mail,role,clave)VALUES($dni,'$nomApell','$email','$role','$clave')";
+							$sql2 = "INSERT INTO enfermeros(id_usuario,RUP,telefono)VALUES(,$rup,$telefono)";
+							$resultado = $conexion->query($sql1);
+						} else {
+							$sql= "INSERT INTO usuarios(DNI,apelnom,mail,role,clave)VALUES($dni,'$nomApell','$email','$role','$clave')";
+							$resultado = $conexion->query($sql);
+						}
 
 						require_once 'abm-usuario.php';
 

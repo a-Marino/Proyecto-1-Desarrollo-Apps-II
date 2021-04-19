@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="js/funciones.js"></script>
+	<script src="js/funciones.js" defer></script>
+	<script src="js/abm_usuarios.js" defer></script>
 	<link rel="icon" href="imagenes/favicon-mobile.png" type="image/png" sizes="16x16">
 	<!-- CDN DE TAILWIND !-->
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">

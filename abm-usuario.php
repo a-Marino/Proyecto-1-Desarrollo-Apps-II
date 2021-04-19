@@ -29,11 +29,11 @@
 						<option value="administrador">Administrador</option>
 					</select>
 			</div>
-			<div class="w-1/4">
+			<div class="w-1/4" id="div_rup">
 				<label for="rup">Rup</label>
-				<input type="number" name="rup"  class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+				<input type="number" name="rup" id="rup" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
 			</div>
-			<div class="w-1/4">
+			<div class="w-1/4" id="div_clave">
 				<label for="clave">Clave</label>
 				<input type="text" name="clave"  class="border border-gray-400 block py-2 px-4 rounded w-full" required>
 			</div>

@@ -31,6 +31,16 @@
 		<div>
 			<?php
 				switch ($boton) {
+					case 'graba_vacuna':
+						$nombre = $_POST['nom_vacuna'];
+						$dosis = $_POST['cant_dosis'];
+
+						$sql ="INSERT INTO tipo_vacunas(nom,dosis)VALUE('$nombre',$dosis)";
+						$resultado = $conexion->query($sql);
+					
+						require_once 'abm-vacunas.php';
+
+						break;
 					case 'graba_usuario':
 						$dni=$_POST['dni'];
 						$nomApell= htmlentities(addslashes($_POST['nomApell']));
@@ -43,19 +53,9 @@
 							
 						$resultado = $conexion->query($sql);
 
-						$boton = 'abm-usuario';
-					
-					case 'graba_vacuna':
-						$nombre = $_POST['nom_vacuna'];
-						$dosis = $_POST['cant_dosis'];
-
-						$sql ="INSERT INTO tipo_vacunas(nom,dosis)VALUE('$nombre',$dosis)";
-						$resultado = $conexion->query($sql);
-					
-						require_once 'abm-vacunas.php';
+						require_once 'abm-usuario.php';
 
 						break;
-					
 					case 'graba_vacunatorio':
 						$centro= $_POST['centro'];
 						$medico= $_POST['medico'];
@@ -65,13 +65,14 @@
 						$sql ="INSERT INTO vacunatorios(id_centro,medico,horario,telefono)VALUE($centro,'$medico','$horario',$telefono)";
 						$resultado = $conexion->query($sql);
 
+						require_once 'abm-vacunatorios.php';
 
-
-					case 'abm-usuario':
-						require_once 'abm-usuario.php';
 						break;
 					case 'asignaciones':
 						require_once 'asignaciones.php';
+						break;
+					case 'abm-usuario':
+						require_once 'abm-usuario.php';
 						break;
 					case 'abm-vacunas':
 						require_once 'abm-vacunas.php';

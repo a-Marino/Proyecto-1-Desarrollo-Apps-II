@@ -5,13 +5,13 @@
     } else {
         switch ($role) {
             case 'adm':
-                require 'menu_administrativo.php';
+                require_once 'menu_administrativo.php';
                 break;
             case 'enf':
-                require 'menu_enfermeros.php';
+                require_once 'menu_enfermeros.php';
                 break;
             case 'ges':
-                require 'menu_gestion.php';
+                require_once 'menu_gestion.php';
                 break;
         }
     }

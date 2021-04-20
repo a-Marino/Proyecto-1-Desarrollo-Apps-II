@@ -35,7 +35,7 @@
 				</tr>
 
 				<?php
-				$consulta = "SELECT * FROM usuarios WHERE role='enf'";
+				$consulta = "SELECT * FROM usuarios INNER JOIN enfermeros on usuarios.Id = enfermeros.Id_usuario";
 				$resultado = $conexion->query($consulta);
 				$registro = $resultado->fetchAll();
 				foreach ($registro as $dato) {

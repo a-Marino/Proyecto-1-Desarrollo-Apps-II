@@ -37,11 +37,10 @@
 
 						$sql ="INSERT INTO tipo_vacunas(nom,dosis)VALUE('$nombre',$dosis)";
 						$resultado = $conexion->query($sql);
-					
+
 						require_once 'abm-vacunas.php';
 
 						break;
-						
 					case 'graba_usuario':
 						$dni=$_POST['dni'];
 						$nomApell= htmlentities(addslashes($_POST['nomApell']));
@@ -51,14 +50,13 @@
 						$rup=$_POST['rup'];
 						$clave=md5($_POST['clave']);
 						
+						$sql= "INSERT INTO usuarios(DNI,apelnom,mail,role,clave)VALUES($dni,'$nomApell','$email','$role','$clave')";
+						$resultado = $conexion->query($sql);
+						$ultimoid = $conexion->lastInsertId();
 
-						if ($role == 'enf') {
-							$sql1 = "INSERT INTO usuarios(DNI,apelnom,mail,role,clave)VALUES($dni,'$nomApell','$email','$role','$clave')";
-							$sql2 = "INSERT INTO enfermeros(id_usuario,RUP,telefono)VALUES(,$rup,$telefono)";
-							$resultado = $conexion->query($sql1);
-						} else {
-							$sql= "INSERT INTO usuarios(DNI,apelnom,mail,role,clave)VALUES($dni,'$nomApell','$email','$role','$clave')";
-							$resultado = $conexion->query($sql);
+						if ($role === 'enf') {
+							$sql2 = "INSERT INTO enfermeros VALUES ($ultimoid,$rup,$telefono)";
+							$resultado2 = $conexion->query($sql2);
 						}
 
 						require_once 'abm-usuario.php';

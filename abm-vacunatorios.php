@@ -70,7 +70,7 @@
 					$resultado = $conexion->query($consulta);
 					$registro = $resultado->fetchAll();
 					foreach ($registro as $dato) {
-						echo '<tr><td  class="border px-8 py-3">' . $dato['nom'] . '</td><td class="border px-8 py-3">' .$dato['horario'].'</td><td class="border px-8 py-3">'. $dato['medico'] . '</td><td class="border px-8 py-3">' . $dato['Id_centro'] .'</td><td class="border px-8 py-3">'. ($dato['disable'] == 0 ? 'Habilitado' : 'Deshabilitado') . '</td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate>'. ($dato['disable'] == 0 ? 'Deshabilitar' : 'Habilitar') .'</button></td><td class="border px-2"><button name="boton" value="edit_vacunatorio"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate> Editar </button></td></tr>';
+						echo '<tr><td  class="border px-8 py-3">' . $dato['nom'] . '</td><td class="border px-8 py-3">' .$dato['horario'].'</td><td class="border px-8 py-3">'. $dato['medico'] . '</td><td class="border px-8 py-3">' . $dato['Id_centro'] .'</td><td class="border px-8 py-3">'. ($dato['disable'] == 0 ? 'Habilitado' : 'Deshabilitado') . '</td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate name="boton" value="disable">'. ($dato['disable'] == 0 ? 'Deshabilitar' : 'Habilitar') .'</button></td><td class="border px-2"><button name="boton" value="edit_vacunatorio"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate> Editar </button></td></tr>';
 					}
 				?>
 			</table>

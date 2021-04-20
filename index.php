@@ -165,5 +165,4 @@
 		<input type="hidden" name="Id_vacunatorio" id="Id_vacunatorio" value="<?php echo $Id_vacunatorio; ?>">
 
 	</form>
-
 </body>

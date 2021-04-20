@@ -46,8 +46,9 @@
 
 				$resultado = $conexion->query($consulta);
 			    $mgraba=1;
-				$boton='registrar-vacunado';
-			
+				
+				require_once 'registro-vacunados.php';
+				break;
 			case 'registrar-vacunado':
 				require_once 'registro-vacunados.php';
 				break;

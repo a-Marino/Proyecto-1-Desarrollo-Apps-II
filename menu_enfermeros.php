@@ -46,7 +46,7 @@
 
 				$resultado = $conexion->query($consulta);
 			    $mgraba=1;
-				
+
 				require_once 'registro-vacunados.php';
 				break;
 			case 'registrar-vacunado':

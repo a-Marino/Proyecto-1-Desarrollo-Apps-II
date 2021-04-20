@@ -15,12 +15,15 @@
 	<title> Secretaria de Salud - Coronel Suarez</title>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 flex flex-col h-full">
 	<!--  Barra NAV !-->
 	<nav class="nav">
 		<a href=""><img src="imagenes/logo_argentina-blanco.svg" alt="Logo Argentina" class="w-64 ml-24"></a>
-		<img src="imagenes/vacunate-logo-lg-n.png" alt="vacunate" class="h-10 mt-1 mr-24">
+		<img src="imagenes/vacunate-logo-lg-n.svg" alt="vacunate" class="h-10 mt-1 mr-24">
 	</nav>
+
+
+
 
 	<form action="index.php" method="POST">
 
@@ -60,7 +63,7 @@
 
 					$consulta = "UPDATE usuarios SET recuperacion='$clave_recuperacion' WHERE DNI=$dni";
 					$resultado = $conexion->query($consulta);
-                    // Script envio de mail de recuperacion - config. en conexion.php 
+                    // Script envio de mail de recuperacion - config. en conexion.php
 					require 'enviar_mail.php';
 				} else {
 					$boton = 'restablecer';
@@ -97,7 +100,7 @@
 				// Acceso Ok - Carga Variables Usuario
 				if ($cuenta == 1) {
 					$registro = $resultado->fetch();
-					
+
 					if ($registro['recuperacion'] == $clave) {
 						$boton = 'cambia_clave';
 						$usuario= $registro['Id'];
@@ -164,7 +167,13 @@
 		<input type="hidden" name="role" value="<?php echo $role; ?>">
 		<input type="hidden" name="RUP" value="<?php echo $RUP; ?>">
 		<input type="hidden" name="Id_vacunatorio" id="Id_vacunatorio" value="<?php echo $Id_vacunatorio; ?>">
-		
+
 
 	</form>
+
+	<footer class="w-full text-center border-t border-grey p-4 pin-b">
+		<img  class="w-30 mx-auto" src="imagenes/logo_municipio.svg" alt="logo_municipio">
+	</footer>
+
+
 </body>

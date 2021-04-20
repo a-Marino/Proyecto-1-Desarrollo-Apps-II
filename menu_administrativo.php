@@ -30,50 +30,8 @@
 	<div class="flex-1 p-10">
 		<div>
 			<?php
+			// Botones Menus
 				switch ($boton) {
-					case 'graba_vacuna':
-						$nombre = $_POST['nom_vacuna'];
-						$dosis = $_POST['cant_dosis'];
-
-						$sql ="INSERT INTO tipo_vacunas(nom,dosis)VALUE('$nombre',$dosis)";
-						$resultado = $conexion->query($sql);
-
-						require_once 'abm-vacunas.php';
-
-						break;
-					case 'graba_usuario':
-						$dni=$_POST['dni'];
-						$nomApell= htmlentities(addslashes($_POST['nomApell']));
-						$telefono=$_POST['telefono'];
-						$email=$_POST['email'];
-						$role=$_POST['rol'];
-						$rup=$_POST['rup'];
-						$clave=md5($_POST['clave']);
-						
-						$sql= "INSERT INTO usuarios(DNI,apelnom,mail,role,clave)VALUES($dni,'$nomApell','$email','$role','$clave')";
-						$resultado = $conexion->query($sql);
-						$ultimoid = $conexion->lastInsertId();
-
-						if ($role === 'enf') {
-							$sql2 = "INSERT INTO enfermeros VALUES ($ultimoid,$rup,$telefono)";
-							$resultado2 = $conexion->query($sql2);
-						}
-
-						require_once 'abm-usuario.php';
-
-						break;
-					case 'graba_vacunatorio':
-						$centro= $_POST['centro'];
-						$medico= $_POST['medico'];
-						$horario= $_POST['horario'];
-						$telefono= $_POST['telefono'];
-
-						$sql ="INSERT INTO vacunatorios(id_centro,medico,horario,telefono)VALUE($centro,'$medico','$horario',$telefono)";
-						$resultado = $conexion->query($sql);
-
-						require_once 'abm-vacunatorios.php';
-
-						break;
 					case 'asignaciones':
 						require_once 'asignaciones.php';
 						break;
@@ -88,6 +46,52 @@
 						break;
 					case 'abm-centros':
 						require_once 'abm-centros.php';
+						break;
+				}
+			// Botones Funcionalidades 
+				switch ($botonApp) {
+					case 'graba_usuario':
+						$dniUsu=$_POST['dni'];
+						$nomApell= htmlentities(addslashes($_POST['nomApell']));
+						$telefonoUsu=$_POST['telefono'];
+						$emailUsu=$_POST['email'];
+						$roleUsu=$_POST['rol'];
+						$rupUsu=$_POST['rup'];
+						$claveUsu=md5($_POST['clave']);
+						
+						$sql= "INSERT INTO usuarios(DNI,apelnom,mail,role,clave)VALUES($dniUsu,'$nomApell','$emailUsu','$roleUsu','$claveUsu')";
+						$resultado = $conexion->query($sql);
+						$ultimoid = $conexion->lastInsertId();
+
+						if ($roleUsu === 'enf') {
+							$sql2 = "INSERT INTO enfermeros VALUES ($ultimoid,$rupUsu,$telefonoUsu)";
+							$resultado2 = $conexion->query($sql2);
+						}
+
+						require_once 'abm-usuario.php';
+
+						break;
+					case 'graba_vacuna':
+						$nombreVac = $_POST['nom_vacuna'];
+						$dosisVac = $_POST['cant_dosis'];
+
+						$sql ="INSERT INTO tipo_vacunas(nom,dosis)VALUE('$nombreVac',$dosisVac)";
+						$resultado = $conexion->query($sql);
+
+						require_once 'abm-vacunas.php';
+
+						break;
+					case 'graba_vacunatorio':
+						$centro= $_POST['centro'];
+						$medico= $_POST['medico'];
+						$horario= $_POST['horario'];
+						$telefonoVac= $_POST['telefono'];
+
+						$sql ="INSERT INTO vacunatorios(id_centro,medico,horario,telefono)VALUE($centro,'$medico','$horario',$telefonoVac)";
+						$resultado = $conexion->query($sql);
+
+						require_once 'abm-vacunatorios.php';
+
 						break;
 				}
 			?>

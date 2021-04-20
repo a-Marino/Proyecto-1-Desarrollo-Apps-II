@@ -18,12 +18,12 @@
 			</div>
 			<div class="flex space-x-5 justify-center mt-5">
 			<div class="w-1/4">
-				<button name='boton' value='buscar_vacuna' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2">
+				<button name='botonApp' value='buscar_vacuna' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2">
 			        	Buscar
 			    </button>
 			</div>
 			<div class="w-1/4">
-				<button name='boton' value='graba_vacuna' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2" id='btn-registrar-vacunado'>
+				<button name='botonApp' value='graba_vacuna' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2" id='btn-registrar-vacunado'>
 			        	Grabar
 			    </button>
 			</div>
@@ -47,7 +47,7 @@
 					$resultado = $conexion->query($consulta);
 					$registro = $resultado->fetchAll();
 					foreach ($registro as $dato) {
-						echo '<tr><td  class="border px-8 py-3 text-center">' . $dato['nom'] . '</td><td class="border px-8 py-3 text-center">' .$dato['dosis'].'</td><td class="border px-8 py-3 text-center">'. ($dato['disable'] == 0 ? 'Habilitado' : 'Deshabilitado') . '</td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" name="boton" value="disable" formnovalidate>'. ($dato['disable'] == 0 ? 'Deshabilitar' : 'Habilitar') .'</button></td><td class="border px-2"><button name="boton" value="edit_vacunatorio"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate> Editar </button></td></tr>';
+						echo '<tr><td  class="border px-8 py-3 text-center">' . $dato['nom'] . '</td><td class="border px-8 py-3 text-center">' .$dato['dosis'].'</td><td class="border px-8 py-3 text-center">'. ($dato['disable'] == 0 ? 'Habilitado' : 'Deshabilitado') . '</td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" name="botonApp" value="disable" formnovalidate>'. ($dato['disable'] == 0 ? 'Deshabilitar' : 'Habilitar') .'</button></td><td class="border px-2"><button name="boton" value="edit_vacunatorio"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate> Editar </button></td></tr>';
 					}
 
 

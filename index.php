@@ -35,6 +35,7 @@
 		} else {
 			$mensaje_error = '';
 			$boton = $_POST['boton'];
+			$botonApp = $_POST['botonApp'];
 			$Id_usuario = $_POST['Id_usuario'];
 			$usuario = $_POST['usuario'];
 			$apelnom = $_POST['apelnom'];
@@ -163,6 +164,7 @@
 		<input type="hidden" name="role" value="<?php echo $role; ?>">
 		<input type="hidden" name="RUP" value="<?php echo $RUP; ?>">
 		<input type="hidden" name="Id_vacunatorio" id="Id_vacunatorio" value="<?php echo $Id_vacunatorio; ?>">
+		
 
 	</form>
 </body>

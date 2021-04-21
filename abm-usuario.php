@@ -24,9 +24,9 @@
 			<div class="w-1/2" id="div_roles">
 				<label for="rol">Role</label>
 				<select name="rol" id="rol" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
-					<option value="ENF">Enfermero</option>
-					<option value="GES">Gestión</option>
-					<option value="ADM">Administrador</option>
+					<option value="enf">Enfermero</option>
+					<option value="ges">Gestión</option>
+					<option value="adm">Administrador</option>
 				</select>
 			</div>
 			<div class="w-1/4" id="div_rup">

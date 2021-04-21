@@ -1,8 +1,8 @@
 
 //tabla
-$(buscar_datos());
+$(buscar_usuarios());
 
-function buscar_datos(consulta){
+function buscar_usuarios(consulta){
     $.ajax({
         url: 'Tablas_administrador/tabla-usuario.php',
         type: 'POST',
@@ -20,12 +20,12 @@ function buscar_datos(consulta){
 }
 
 
-$(document).on('keyup', '#caja_busqueda', function(){
+$(document).on('keyup', '#buscar_usuarios', function(){
     var valor = $(this).val();
     if(valor != ""){
-        buscar_datos(valor);
+        buscar_usuarios(valor);
     }else{
-        buscar_datos();
+        buscar_usuarios();
     }
 })
 

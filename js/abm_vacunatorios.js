@@ -1,16 +1,16 @@
 //tabla
-$(buscar_vacunas());
+$(buscar_vacunatorios());
 
-function buscar_vacunas(consulta){
+function buscar_vacunatorios(consulta){
     $.ajax({
-        url: 'Tablas_administrador/tabla-vacunas.php',
+        url: 'Tablas_administrador/tabla-vacunatorios.php',
         type: 'POST',
         dataType: 'html',
         data: {consulta:consulta},
     })
 
     .done(function(respuesta){
-        $("#tabla_vacunas").html(respuesta);
+        $("#tabla_vacunatorios").html(respuesta);
     })
 
     .fail(function(){
@@ -22,8 +22,8 @@ function buscar_vacunas(consulta){
 $(document).on('keyup', '#caja_busqueda', function(){
     var valor = $(this).val();
     if(valor != ""){
-        buscar_vacunas(valor);
+        buscar_vacunatorios(valor);
     }else{
-        buscar_vacunas();
+        buscar_vacunatorios();
     }
 })

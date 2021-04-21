@@ -13,21 +13,21 @@
 			</div>
 			<div class="w-1/2">
 				<label for="apellNom">Apellido y Nombre</label>
-				<input type="text" name="nomApell"  class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+				<input type="text" name="nomApell" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
 			</div>
 			<div class="w-1/2">
 				<label for="email">Email</label>
-				<input type="email" name="email"  class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+				<input type="email" name="email" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
 			</div>
 		</div>
 		<div class="flex space-x-4 mt-2">
 			<div class="w-1/2" id="div_roles">
 				<label for="rol">Role</label>
-					<select name="rol" id="rol" class="border border-gray-400 block py-2 px-4 rounded w-full" required >
-						<option value="enf">Enfermero</option>
-						<option value="ges">Gestión</option>
-						<option value="adm">Administrador</option>
-					</select>
+				<select name="rol" id="rol" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+					<option value="ENF">Enfermero</option>
+					<option value="GES">Gestión</option>
+					<option value="ADM">Administrador</option>
+				</select>
 			</div>
 			<div class="w-1/4" id="div_rup">
 				<label for="rup">Rup</label>
@@ -39,19 +39,19 @@
 			</div>
 			<div class="w-1/4" id="div_clave">
 				<label for="clave">Clave</label>
-				<input type="text" name="clave"  class="border border-gray-400 block py-2 px-4 rounded w-full" required>
+				<input type="text" name="clave" class="border border-gray-400 block py-2 px-4 rounded w-full" required>
 			</div>
 		</div>
 		<div class="flex space-x-5 justify-center mt-5">
 			<div class="w-1/4">
 				<button name='botonApp' value='buscar_usuario' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2">
-			        	Buscar
-			    </button>
+					Buscar
+				</button>
 			</div>
 			<div class="w-1/4">
 				<button name='botonApp' value='graba_usuario' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2" id='btn-registrar-vacunado'>
-			        	Grabar
-			    </button>
+					Grabar
+				</button>
 			</div>
 		</div>
 	</div>
@@ -62,16 +62,17 @@
 				<tr>
 					<th class="bg-blue-100 border text-left w-1/4 px-8 py-2">DNI</th>
 					<th class="bg-blue-100 border text-left w-1/2 px-8 py-2">Nombre y Apellido</th>
-					<th class="bg-blue-100 border text-left w-1/4 px-8 py-2" colspan=3>Estado</th>
+					<th class="bg-blue-100 border text-left w-1/4 px-8 py-2">Role</th>
+					<th class="bg-blue-100 border text-left w-1/4 px-8 py-2" colspan=2>Estado</th>
 				</tr>
-				
+
 				<?php
-					$consulta = "SELECT * FROM usuarios";
-					$resultado = $conexion->query($consulta);
-					$registro = $resultado->fetchAll();
-					foreach ($registro as $dato) {
-						echo '<tr><td class="border px-8 py-3">' . $dato['DNI'] . '</td><td class="border px-8 py-3">' . $dato['apelnom'] . '</td><td class="border px-8 py-3">' . ($dato['disable'] == 0 ? 'Habilitado' : 'Deshabilitado') . '</td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate name="botonApp" value="disable">'. ($dato['disable'] == 0 ? 'Deshabilitar' : 'Habilitar') .'</button></td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate> Editar </button></td></tr>';
-					}
+				$consulta = "SELECT * FROM usuarios";
+				$resultado = $conexion->query($consulta);
+				$registro = $resultado->fetchAll();
+				foreach ($registro as $dato) {
+					echo '<tr><td class="border px-8 py-3">' . $dato['DNI'] . '</td><td class="border px-8 py-3">' . $dato['apelnom'] . '</td><td class="border px-8 py-3">' .$dato['role']. '</td><td class="border px-2"><button class="'.($dato['disable'] == 1 ? 'bg-red-500 hover:bg-red-700' : 'bg-green-400 hover:bg-green-700').' text-white font-bold py-1 px-2 rounded-full" formnovalidate name="boton" value="disable">'. ($dato['disable'] == 1 ? 'Deshabilitado' : 'Habilitado') .'</button></td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate> Editar </button></td></tr>';
+				}
 				?>
 			</table>
 		</div>

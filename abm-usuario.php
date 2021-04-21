@@ -53,7 +53,7 @@
 	</div>
 <!--tabla-->
 
-<input type="text" name="caja_busqueda" id="caja_busqueda" placeholder="BUSCAR">
+<input type="text" name="buscar_usuarios" id="buscar_usuarios" placeholder="BUSCAR">
 
 <div id="tabla_usuarios"></div>
 

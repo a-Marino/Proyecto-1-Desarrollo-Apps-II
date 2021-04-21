@@ -43,11 +43,7 @@
 			</div>
 		</div>
 		<div class="flex space-x-5 justify-center mt-5">
-			<div class="w-1/4">
-				<button name='botonApp' value='buscar_usuario' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2">
-					Buscar
-				</button>
-			</div>
+			
 			<div class="w-1/4">
 				<button name='botonApp' value='graba_usuario' class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2" id='btn-registrar-vacunado'>
 					Grabar
@@ -55,26 +51,11 @@
 			</div>
 		</div>
 	</div>
+<!--tabla-->
 
-	<div class="flex">
-		<div>
-			<table class="shadow-lg bg-white table-fixed">
-				<tr>
-					<th class="bg-blue-100 border text-left w-1/4 px-8 py-2">DNI</th>
-					<th class="bg-blue-100 border text-left w-1/2 px-8 py-2">Nombre y Apellido</th>
-					<th class="bg-blue-100 border text-left w-1/4 px-8 py-2">Role</th>
-					<th class="bg-blue-100 border text-left w-1/4 px-8 py-2" colspan=2>Estado</th>
-				</tr>
+<input type="text" name="caja_busqueda" id="caja_busqueda" placeholder="BUSCAR">
 
-				<?php
-				$consulta = "SELECT * FROM usuarios";
-				$resultado = $conexion->query($consulta);
-				$registro = $resultado->fetchAll();
-				foreach ($registro as $dato) {
-					echo '<tr><td class="border px-8 py-3">' . $dato['DNI'] . '</td><td class="border px-8 py-3">' . $dato['apelnom'] . '</td><td class="border px-8 py-3">' .$dato['role']. '</td><td class="border px-2"><button class="'.($dato['disable'] == 1 ? 'bg-red-500 hover:bg-red-700' : 'bg-green-400 hover:bg-green-700').' text-white font-bold py-1 px-2 rounded-full" formnovalidate name="boton" value="disable">'. ($dato['disable'] == 1 ? 'Deshabilitado' : 'Habilitado') .'</button></td><td class="border px-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full" formnovalidate> Editar </button></td></tr>';
-				}
-				?>
-			</table>
-		</div>
-	</div>
+<div id="tabla_usuarios"></div>
+
+
 </div>

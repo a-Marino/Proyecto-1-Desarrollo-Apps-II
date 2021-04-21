@@ -22,6 +22,8 @@ require('../conexion.php');
                                 <td class='bg-blue-100 border text-left w-1/2 px-8 py-2'>Mail</td>
                                 <td class='bg-blue-100 border text-left w-1/2 px-8 py-2'>Role</td>
                                 <td class='bg-blue-100 border text-left w-1/2 px-8 py-2'>Estado</td>
+                                <td class='bg-blue-100 border text-left w-1/2 px-8 py-2'></td>
+                                <td class='bg-blue-100 border text-left w-1/2 px-8 py-2'></td>
                             </tr>
                         </th>
                         <tbody>";
@@ -32,7 +34,11 @@ require('../conexion.php');
                             <td class='text-center'>".$fila['mail']."</td>
                             <td class='text-center '>".$fila['role']."</td>
                             <td class='text-center '>".($fila['disable'] == 0 ? 'Habilitado' : 'Deshabilitado')."</td>
-                            </tr>";
+                            <td class='text-center'><button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full'>Editar</button></td>
+                            <td class='text-center'><button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full 'formnovalidate'>Deshabilitar</button></td>
+
+
+                        </tr>";
         }
         $tabla .= "</tbody></table>";
     }else{

@@ -8,6 +8,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="js/funciones.js" defer></script>
 	<script src="js/abm_usuarios.js" defer></script>
+	<script src="js/abm_vacunas.js" defer></script>
 	<link rel="icon" href="imagenes/favicon-mobile.png" type="image/png" sizes="16x16">
 	<!-- CDN DE TAILWIND !-->
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">

@@ -28,13 +28,13 @@ if($resultado->rowCount() > 0){
                 <tbody>";
     foreach ($conexion->query($query) as $fila) {
         $tabla .= " <tr>
-                        <td  class='text-center'>".$fila['nom']."</td>
-                        <td class='text-center'>".$fila['medico']."</td>
-                        <td class='text-center'>".$fila['horario']."</td>
-                        <td class='text-center'>".$fila['telefono']."</td>
-                        <td class='text-center '>".($fila['disable'] == 0 ? 'Habilitado' : 'Deshabilitado')."</td>
-                        <td class='text-center'><button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full'>Editar</button></td>
-                        <td class='text-center'><button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full 'formnovalidate'>Deshabilitar</button></td>
+                        <td  class='text-center border border-gray-300 p-1'>".$fila['nom']."</td>
+                        <td class='text-center border border-gray-300 p-1'>".$fila['medico']."</td>
+                        <td class='text-center border border-gray-300 p-1'>".$fila['horario']."</td>
+                        <td class='text-center border border-gray-300 p-1'>".$fila['telefono']."</td>
+                        <td class='text-center border border-gray-300 p-1'>".($fila['disable'] == 0 ? 'Habilitado' : 'Deshabilitado')."</td>
+                        <td class='text-center p-2'><button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full'>Editar</button></td>
+                        <td class='text-center p-2'><button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded-full 'formnovalidate'>Deshabilitar</button></td>
                     </tr>";
     }
     $tabla .= "</tbody></table>";

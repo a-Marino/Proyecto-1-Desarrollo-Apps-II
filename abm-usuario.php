@@ -53,9 +53,9 @@
 	</div>
 <!--tabla-->
 
-<input type="text" name="buscar_usuarios" id="buscar_usuarios" placeholder="BUSCAR">
+<input type="text" name="buscar_usuarios" id="buscar_usuarios" placeholder="BUSCAR" class="rounded w-full py-2 px-4 border border-gray-400">
 
-<div id="tabla_usuarios"></div>
+<div id="tabla_usuarios" class="max-w-4xl"></div>
 
 
 </div>

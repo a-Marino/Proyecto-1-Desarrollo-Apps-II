@@ -50,8 +50,8 @@
 
 <!--TABLA-->
 
-<input type="text" name="caja_busqueda" id="caja_busqueda" placeholder="BUSCAR">
+<input type="text" name="caja_busqueda" id="caja_busqueda" placeholder="BUSCAR" class="rounded w-full py-2 px-4 border border-gray-400">
 
-<div id="tabla_vacunatorios"></div>
+<div id="tabla_vacunatorios" class="max-w-4xl"></div>
 
 </div>
